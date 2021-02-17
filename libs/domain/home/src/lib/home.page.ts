@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Category } from './Category';
 import { HomeService } from './home.service';
+import { Item } from './Item';
 
 @Component({
   templateUrl: './home.page.html',
@@ -8,8 +10,8 @@ import { HomeService } from './home.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
-  categories$: Observable<unknown[]>;
-  featured$: Observable<unknown[]>;
+  categories$: Observable<Category[]>;
+  featured$: Observable<Item[]>;
 
   constructor(private service: HomeService) {
     this.categories$ = service.getCategories$();

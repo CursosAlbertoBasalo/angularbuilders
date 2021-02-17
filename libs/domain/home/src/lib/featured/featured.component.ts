@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Item } from '../Item';
 
 @Component({
   selector: 'ab-home-featured',
@@ -7,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeaturedComponent {
-  @Input() props!: unknown[];
+  @Input() props!: Item[];
 }

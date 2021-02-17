@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Category } from '../Category';
 
 @Component({
   selector: 'ab-home-categories',
@@ -7,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoriesComponent {
-  @Input() props!: unknown[];
+  @Input() props!: Category[];
 }
