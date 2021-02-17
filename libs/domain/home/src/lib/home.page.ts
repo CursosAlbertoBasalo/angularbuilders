@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HomeService } from './home.service';
 
 @Component({
@@ -7,10 +7,12 @@ import { HomeService } from './home.service';
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomePage implements OnInit {
-  constructor(private route: ActivatedRoute, private service: HomeService) {}
+export class HomePage {
+  categories$: Observable<unknown[]>;
+  featured$: Observable<unknown[]>;
 
-  ngOnInit(): void {
-    this.route.params.subscribe();
+  constructor(private service: HomeService) {
+    this.categories$ = service.getCategories$();
+    this.featured$ = service.getFeatured$();
   }
 }

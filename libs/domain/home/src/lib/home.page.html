@@ -1,1 +1,5 @@
 <h3>home page</h3>
+<ab-home-categories *ngIf="categories$ | async as categories" [props]="categories">
+</ab-home-categories>
+<ab-home-featured *ngIf="featured$ | async as featured" [props]="featured">
+</ab-home-featured>
