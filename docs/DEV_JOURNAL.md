@@ -1,3 +1,5 @@
+# 0
+
 npx create-nx-workspace --preset=angular
 
 nx generate @nrwl/angular:library --name=data --directory=shared --buildable --importPath=@ab/data --simpleModuleName --strict --tags='shared, data'
@@ -9,3 +11,10 @@ ng generate @nrwl/angular:library --name=home --directory=domain --buildable --e
 ng generate @schematics/angular:component --name=home --project=domain-home --changeDetection=OnPush --flat --inlineStyle --skipSelector --type=Page
 
 ng generate @schematics/angular:service --name=home --project=domain-home
+
+---
+
+# 1
+
+ng g @schematics/angular:component categories --project domain-home --change-detection OnPush
+ng g @schematics/angular:component featured --project domain-home --change-detection OnPush
