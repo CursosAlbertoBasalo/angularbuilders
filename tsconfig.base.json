@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ab/data": ["libs/shared/data/src/index.ts"],
+      "@ab/ui": ["libs/shared/ui/src/index.ts"],
+      "@ab/home": ["libs/domain/home/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

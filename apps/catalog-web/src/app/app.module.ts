@@ -3,7 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
+  },
+];
 
 @NgModule({
   declarations: [AppComponent],
