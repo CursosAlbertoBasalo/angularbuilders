@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/catalog-web',
     '<rootDir>/libs/shared/data',
     '<rootDir>/libs/shared/ui',
+    '<rootDir>/libs/domain/home',
   ],
 };
