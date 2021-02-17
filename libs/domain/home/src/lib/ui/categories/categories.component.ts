@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Category } from '../Category';
+import { Category } from '../../models/Category';
 
 @Component({
   selector: 'ab-home-categories',
