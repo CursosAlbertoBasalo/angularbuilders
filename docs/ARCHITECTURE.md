@@ -8,15 +8,7 @@
 
 ---
 
-## 📚 domain-home
-
-### 📗 HomeModule
-
-#### 📄 HomePage
-
-#### 👷‍♂️ HomeService
-
----
+## 📑 shared-models
 
 ## 📚 shared-data
 
@@ -25,3 +17,19 @@
 ## 📚 shared-ui
 
 ### 📘 UiModule
+
+---
+
+## 📚 domain-home
+
+### 📗 HomeModule
+
+#### 📄 HomePage
+
+#### 🧩 ViewModeComponent
+
+#### 🧩 CategoriesComponent
+
+#### 🧩 FeaturedComponent
+
+#### 👷‍♂️ HomeService
