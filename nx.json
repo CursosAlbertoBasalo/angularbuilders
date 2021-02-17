@@ -23,6 +23,7 @@
   "projects": {
     "catalog-web": { "tags": [] },
     "catalog-web-e2e": { "tags": [], "implicitDependencies": ["catalog-web"] },
-    "shared-data": { "tags": ["shared", "data"] }
+    "shared-data": { "tags": ["shared", "data"] },
+    "shared-ui": { "tags": ["shared", "ui"] }
   }
 }
