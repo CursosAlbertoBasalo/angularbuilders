@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 import { HomeService } from './home.service';
 import { CategoriesComponent } from './categories/categories.component';
 import { FeaturedComponent } from './featured/featured.component';
+import { ViewModeComponent } from './view-mode/view-mode.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { FeaturedComponent } from './featured/featured.component';
       { path: '', pathMatch: 'full', component: HomePage },
     ]),
   ],
-  declarations: [HomePage, CategoriesComponent, FeaturedComponent],
+  declarations: [HomePage, CategoriesComponent, FeaturedComponent, ViewModeComponent],
   providers: [HomeService],
 })
 export class HomeModule {}
