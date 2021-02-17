@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HomeService } from './data/home.service';
 import { HomePage } from './home.page';
-import { HomeService } from './home.service';
-import { CategoriesComponent } from './categories/categories.component';
-import { FeaturedComponent } from './featured/featured.component';
-import { ViewModeComponent } from './view-mode/view-mode.component';
+import { CategoriesComponent } from './ui/categories/categories.component';
+import { FeaturedComponent } from './ui/featured/featured.component';
+import { ViewModeComponent } from './ui/view-mode/view-mode.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,12 @@ import { ViewModeComponent } from './view-mode/view-mode.component';
       { path: '', pathMatch: 'full', component: HomePage },
     ]),
   ],
-  declarations: [HomePage, CategoriesComponent, FeaturedComponent, ViewModeComponent],
+  declarations: [
+    HomePage,
+    CategoriesComponent,
+    FeaturedComponent,
+    ViewModeComponent,
+  ],
   providers: [HomeService],
 })
 export class HomeModule {}

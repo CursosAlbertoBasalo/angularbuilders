@@ -4,7 +4,7 @@ import {
   EventEmitter,
   Output,
 } from '@angular/core';
-import { viewModes } from './viewModes';
+import { viewModes } from '../../models/viewModes';
 
 @Component({
   selector: 'ab-home-view-mode',
