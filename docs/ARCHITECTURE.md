@@ -4,6 +4,10 @@
 
   - ### 📄 AppComponent
 
+---
+
+---
+
 # 📚 domain-home
 
 - ## 📗 HomeModule
@@ -17,6 +21,10 @@
   - ### 🦠 FeaturedComponent
 
   - ### 👷‍♂️ HomeService
+
+---
+
+---
 
 # 📚 shared-models
 
