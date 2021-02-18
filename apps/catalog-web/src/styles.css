@@ -7,15 +7,19 @@
 :root {
   --border-radius: 5px;
   --box-shadow: 2px 2px 10px;
-  --color: #005bc4;
-  --color-accent: #118bee15;
+
+  --color: #3ad29f;
+  --color-text: #333;
   --color-bg: #fff;
-  --color-bg-secondary: #3ad29f;
+  --color-accent: #f73454;
+
   --color-secondary: #28aaff;
-  --color-secondary-accent: #536171;
-  --color-shadow: #f4f4f4;
-  --color-text: #000;
-  --color-text-secondary: #999;
+  --color-text-secondary: #3ad29f;
+  --color-bg-secondary: #f1f1f1;
+  --color-secondary-accent: #005bc4;
+
+  --color-shadow: #ccc;
+
   --font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, 'Open Sans',
     Helvetica, Arial, sans-serif;
   --hover-brightness: 1.2;
@@ -28,6 +32,9 @@
   --width-content: 1080px;
 }
 
+/* ==================== */
+/* DARK MODE */
+/* ==================== */
 /*
 @media (prefers-color-scheme: dark) {
   :root {
@@ -44,12 +51,9 @@
 }
 */
 
-/* Layout */
-article aside {
-  background: var(--color-secondary-accent);
-  border-left: 4px solid var(--color-secondary);
-  padding: 0.01rem 0.8rem;
-}
+/* ==================== */
+/* LAYOUT */
+/* ==================== */
 
 body {
   background: var(--color-bg);
@@ -76,34 +80,13 @@ hr {
   margin: 4rem 0;
 }
 
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: var(--justify-important);
-}
-
-section aside {
-  border: 1px solid var(--color-bg-secondary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow) var(--color-shadow);
-  margin: 1rem;
-  padding: 1.25rem;
-  width: var(--width-card);
-}
-
-section aside:hover {
-  box-shadow: var(--box-shadow) var(--color-bg-secondary);
-}
-
-section aside img {
-  max-width: 100%;
-}
-
 [hidden] {
   display: none;
 }
 
-/* Headers */
+/* ==================== */
+/* HEADERS */
+/* ==================== */
 article header,
 div header,
 main header {
@@ -126,12 +109,9 @@ header nav img {
   margin: 1rem 0;
 }
 
-section header {
-  padding-top: 0;
-  width: 100%;
-}
-
-/* Nav */
+/* ==================== */
+/* NAVIGATION */
+/* ==================== */
 nav {
   align-items: center;
   display: flex;
@@ -152,43 +132,9 @@ nav ul li {
   text-align: left;
 }
 
-/* Nav Dropdown */
-nav ul li:hover ul {
-  display: block;
-}
-
-nav ul li ul {
-  background: var(--color-bg);
-  border: 1px solid var(--color-bg-secondary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow) var(--color-shadow);
-  display: none;
-  height: auto;
-  left: -2px;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  top: 1.7rem;
-  white-space: nowrap;
-  width: auto;
-  z-index: 1;
-}
-
-nav ul li ul::before {
-  /* fill gap above to make mousing over them easier */
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -0.5rem;
-  height: 0.5rem;
-}
-
-nav ul li ul li,
-nav ul li ul li a {
-  display: block;
-}
-
-/* Typography */
+/* ==================== */
+/* TYPOGRAPHY */
+/* ==================== */
 code,
 samp {
   background-color: var(--color-accent);
@@ -261,7 +207,9 @@ sup {
   top: -2px;
 }
 
-/* Links */
+/* ==================== */
+/* LINKS */
+/* ==================== */
 a {
   color: var(--color-secondary);
   display: inline-block;
@@ -314,7 +262,9 @@ a i {
   padding: 1rem 2rem;
 }
 
-/* Images */
+/* ==================== */
+/* IMAGES */
+/* ==================== */
 figure {
   margin: 0;
   padding: 0;
@@ -328,20 +278,9 @@ figure figcaption {
   color: var(--color-text-secondary);
 }
 
-/* Forms */
-
-button:disabled,
-input:disabled {
-  background: var(--color-bg-secondary);
-  border-color: var(--color-bg-secondary);
-  color: var(--color-text-secondary);
-  cursor: not-allowed;
-}
-
-button[disabled]:hover {
-  filter: none;
-}
-
+/* ==================== */
+/* FORM */
+/* ==================== */
 form {
   border: 1px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
@@ -356,6 +295,18 @@ form {
 form header {
   margin: 1.5rem 0;
   padding: 1.5rem 0;
+}
+
+button:disabled,
+input:disabled {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+button[disabled]:hover {
+  filter: none;
 }
 
 input,
@@ -399,7 +350,9 @@ label {
   margin-bottom: 0.2rem;
 }
 
-/* Tables */
+/* ==================== */
+/* TABLE */
+/* ==================== */
 table {
   border: 1px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
@@ -444,7 +397,9 @@ table tr:nth-child(even) {
   background-color: var(--color-accent);
 }
 
-/* Quotes */
+/* ==================== */
+/* QUOTES */
+/* ==================== */
 blockquote {
   display: block;
   font-size: x-large;
@@ -462,3 +417,37 @@ blockquote footer {
   line-height: var(--line-height);
   padding: 1.5rem 0;
 } /* You can add global styles to this file, and also import other style files */
+
+/* ======= */
+/* SECTION */
+/* ======= */
+
+/*
+
+ section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--justify-important);
+}
+
+section header {
+  padding-top: 0;
+  width: 100%;
+}
+
+section aside {
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
+  margin: 1rem;
+  padding: 1.25rem;
+  width: var(--width-card);
+}
+
+section aside:hover {
+  box-shadow: var(--box-shadow) var(--color-bg-secondary);
+}
+
+section aside img {
+  max-width: 100%;
+} */
