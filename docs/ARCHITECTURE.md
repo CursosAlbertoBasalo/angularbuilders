@@ -27,3 +27,7 @@
 # 📚 shared-ui
 
 - ## 📘 UiModule
+
+  - ### ☢ TitleComponent
+
+  - ### 🧬 CardComponent

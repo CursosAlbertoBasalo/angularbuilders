@@ -28,16 +28,24 @@ ng generate @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storyb
 # 1. Componentes y comunicación asíncrona
 
 ```bash
-# Compoenete página
+# 📄 Compoenete página
 ng generate @schematics/angular:component --name=home --project=domain-home --changeDetection=OnPush --flat --inlineStyle --skipSelector --type=Page
 
-# Servicio de acceso a datos
+# 👷‍♂️ Servicio de acceso a datos
 ng generate @schematics/angular:service --name=data/home --project=domain-home
 
-# Presentacional de categorias
+# 🦠 Presentacional de categorias
 ng g @schematics/angular:component ui/categories --project domain-home --change-detection OnPush --skipTests
-# Presentacional de elementos destacados
+# 🦠 Presentacional de elementos destacados
 ng g @schematics/angular:component ui/featured --project domain-home --change-detection OnPush --skipTests
-# Presentacional de modos de visualización
+# 🦠 Presentacional de modos de visualización
 ng g @schematics/angular:component ui/view-mode --project domain-home --change-detection OnPush --skipTests
+
+
+# ☢ Elemento título (ATOMS)
+ng g @schematics/angular:component components/title --project shared-ui --change-detection OnPush --export --skip-tests
+# 🧬 Bloque tarjeta (MOLECULES)
+ng g @schematics/angular:component components/card --project shared-ui --change-detection OnPush --export --skip-tests
+# 📜 Plantilla loading (TEMPLATES)
+
 ```
