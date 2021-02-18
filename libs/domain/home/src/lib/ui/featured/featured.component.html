@@ -1,2 +1,2 @@
 <h4>Featured resources</h4>
-<pre> {{ props | json }}</pre>
+<ab-ui-card *ngFor="let category of props" [props]="toCard(category)"></ab-ui-card>
