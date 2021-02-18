@@ -6,7 +6,7 @@ import { Category } from '../models/Category';
 import { Item } from '../models/Item';
 import { viewModes } from '../models/viewModes';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class HomeService {
   constructor(private http: HttpClient) {}
   getCategories$(viewMode: viewModes) {

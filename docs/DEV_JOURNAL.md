@@ -1,12 +1,14 @@
-# 0
+# 0. Nx, grandes proyectos requieren mejores herramientas
 
 npx create-nx-workspace --preset=angular
 
-ng generate @nrwl/workspace:library --name=models --directory=shared --importPath=@ab/models --strict --tags='shared, models' --testEnvironment=node
+ng generate @nrwl/workspace:library --name=models --directory=shared --importPath=@ab/models --strict --testEnvironment=node --tags='shared, models'
 
 nx generate @nrwl/angular:library --name=data --directory=shared --buildable --importPath=@ab/data --simpleModuleName --strict --tags='shared, data'
 
 nx generate @nrwl/angular:library --name=ui --directory=shared --buildable --enableIvy --importPath=@ab/ui --prefix=ab-ui --simpleModuleName --strict --tags='shared, ui'
+
+nx g @nrwl/storybook:configuration
 
 ng generate @nrwl/angular:library --name=home --directory=domain --buildable --enableIvy --importPath=@ab/home --lazy --prefix=ab-home --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
 

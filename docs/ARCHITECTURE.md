@@ -1,35 +1,29 @@
-# angularbuilders
+# 💻 catalog-web
 
-## 💻 catalog-web
+- ## 📕 AppModule
 
-### 📕 AppModule
+  - ### 📄 AppComponent
 
-#### 📄 AppComponent
+# 📚 domain-home
 
----
+- ## 📗 HomeModule
 
-## 📑 shared-models
+  - ### 📄 HomePage
 
-## 📚 shared-data
+  - ### 🧩 ViewModeComponent
 
-### 📘 DataModule
+  - ### 🧩 CategoriesComponent
 
-## 📚 shared-ui
+  - ### 🧩 FeaturedComponent
 
-### 📘 UiModule
+  - ### 👷‍♂️ HomeService
 
----
+# 📚 shared-models
 
-## 📚 domain-home
+# 📚 shared-data
 
-### 📗 HomeModule
+- ## 📘 DataModule
 
-#### 📄 HomePage
+# 📚 shared-ui
 
-#### 🧩 ViewModeComponent
-
-#### 🧩 CategoriesComponent
-
-#### 🧩 FeaturedComponent
-
-#### 👷‍♂️ HomeService
+- ## 📘 UiModule
