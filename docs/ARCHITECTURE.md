@@ -2,7 +2,7 @@
 
 - ## 📕 AppModule
 
-  - ### 🗺 Routes
+  - ### 🧭 Routes
 
   - ### 📄 AppComponent
 
@@ -24,6 +24,8 @@
 
   - ### 👷‍♂️ HomeService
 
+# 📚 domain-item
+
 - ## 📗 ItemModule
 
   - ### 📄 ItemPage
@@ -31,6 +33,20 @@
   - ### 👷‍♂️ ItemService
 
   - ### 🤠 ItemResolver
+
+# 📚 domain-search
+
+- ## 📗 SearchModule
+
+  - ### 📄 SearchPage
+
+# 📚 domain-term
+
+- ## 📘 TermModule
+
+  - ### 📄 TermComponent
+
+    - #### 🧭 Route & Router
 
 ---
 
