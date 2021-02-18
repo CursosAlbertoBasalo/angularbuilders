@@ -5,6 +5,10 @@
     "analytics": "7c9db544-8ca3-4786-90a1-a97631cbd040"
   },
   "schematics": {
+    "@schematics/angular:component": {
+      "change-detection": "OnPush",
+      "skip-tests": true
+    },
     "@nrwl/angular": {
       "application": {
         "linter": "eslint"

@@ -31,3 +31,5 @@
   - ### ☢ TitleComponent
 
   - ### 🧬 CardComponent
+
+  - ### 📜 LoadingComponent

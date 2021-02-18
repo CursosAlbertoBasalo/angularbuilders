@@ -6,21 +6,20 @@
 npx create-nx-workspace --preset=angular
 
 # 🗄 Domain 📚 Home Lib
-ng generate @nrwl/angular:library --name=home --directory=domain --buildable --enableIvy --importPath=@ab/home --lazy --prefix=ab-home --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+ng g @nrwl/angular:library home --directory=domain --buildable --enableIvy --importPath=@ab/home --lazy --prefix=ab-home --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
 
 # 🗄 Shared 📚 Models Lib
-ng generate @nrwl/workspace:library --name=models --directory=shared --importPath=@ab/models --strict --testEnvironment=node --tags='shared, models'
+ng g @nrwl/workspace:library models --directory=shared --importPath=@ab/models --strict --testEnvironment=node --tags='shared, models'
 
 # 🗄 Shared 📚 Data Lib
-nx generate @nrwl/angular:library --name=data --directory=shared --buildable --importPath=@ab/data --simpleModuleName --strict --tags='shared, data'
+nx g @nrwl/angular:library data --directory=shared --buildable --importPath=@ab/data --simpleModuleName --strict --tags='shared, data'
 
 # ### 🗄 Shared 📚 UI Lib
-nx generate @nrwl/angular:library --name=ui --directory=shared --buildable --enableIvy --importPath=@ab/ui --prefix=ab-ui --simpleModuleName --strict --tags='shared, ui'
+nx g @nrwl/angular:library ui --directory=shared --buildable --enableIvy --importPath=@ab/ui --prefix=ab-ui --simpleModuleName --strict --tags='shared, ui'
 
 # 👩‍🔬 StoryBook
 nx g @nrwl/storybook:configuration
-
-ng generate @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storybook/angular
+ng g @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storybook/angular
 ```
 
 ---
@@ -29,23 +28,25 @@ ng generate @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storyb
 
 ```bash
 # 📄 Compoenete página
-ng generate @schematics/angular:component --name=home --project=domain-home --changeDetection=OnPush --flat --inlineStyle --skipSelector --type=Page
+ng g c home --project=domain-home  --flat --inlineStyle --skipSelector --type=Page --skip-tests=false
 
 # 👷‍♂️ Servicio de acceso a datos
-ng generate @schematics/angular:service --name=data/home --project=domain-home
+ng g s data/home --project=domain-home
 
 # 🦠 Presentacional de categorias
-ng g @schematics/angular:component ui/categories --project domain-home --change-detection OnPush --skipTests
+ng g c ui/categories --project domain-home
 # 🦠 Presentacional de elementos destacados
-ng g @schematics/angular:component ui/featured --project domain-home --change-detection OnPush --skipTests
+ng g c ui/featured --project domain-home
 # 🦠 Presentacional de modos de visualización
-ng g @schematics/angular:component ui/view-mode --project domain-home --change-detection OnPush --skipTests
+ng g c ui/view-mode --project domain-home
 
 
 # ☢ Elemento título (ATOMS)
-ng g @schematics/angular:component components/title --project shared-ui --change-detection OnPush --export --skip-tests
+ng g c components/title --project shared-ui  --export
 # 🧬 Bloque tarjeta (MOLECULES)
-ng g @schematics/angular:component components/card --project shared-ui --change-detection OnPush --export --skip-tests
+ng g c components/card --project shared-ui  --export
 # 📜 Plantilla loading (TEMPLATES)
-
+ng g c templates/loading --project shared-ui  --export --skip-tests=false
 ```
+
+---
