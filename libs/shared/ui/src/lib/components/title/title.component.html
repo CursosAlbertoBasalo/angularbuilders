@@ -1,1 +1,8 @@
-<h3>{{ props }}</h3>
+<a *ngIf="props.link" [routerLink]="props.link">
+  <h3>
+    {{ props.caption }}
+  </h3>
+</a>
+<h3 *ngIf="!props.link">
+  {{ props.caption }}
+</h3>

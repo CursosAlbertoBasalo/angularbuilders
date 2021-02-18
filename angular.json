@@ -57,9 +57,7 @@
               "apps/catalog-web/src/favicon.ico",
               "apps/catalog-web/src/assets"
             ],
-            "styles": [
-              "apps/catalog-web/src/styles.css"
-            ],
+            "styles": ["apps/catalog-web/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -120,9 +118,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/catalog-web"
-          ],
+          "outputs": ["coverage/apps/catalog-web"],
           "options": {
             "jestConfig": "apps/catalog-web/jest.config.js",
             "passWithNoTests": true
@@ -151,9 +147,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/catalog-web-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/catalog-web-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -187,9 +181,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/data"
-          ],
+          "outputs": ["coverage/libs/shared/data"],
           "options": {
             "jestConfig": "libs/shared/data/jest.config.js",
             "passWithNoTests": true
@@ -226,9 +218,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui"
-          ],
+          "outputs": ["coverage/libs/shared/ui"],
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -295,9 +285,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/home"
-          ],
+          "outputs": ["coverage/libs/domain/home"],
           "options": {
             "jestConfig": "libs/domain/home/jest.config.js",
             "passWithNoTests": true
@@ -313,18 +301,51 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["libs/shared/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/models"],
+          "options": {
+            "jestConfig": "libs/shared/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "domain-item": {
+      "projectType": "library",
+      "root": "libs/domain/item",
+      "sourceRoot": "libs/domain/item/src",
+      "prefix": "ab-item",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/domain/item/tsconfig.lib.json",
+            "project": "libs/domain/item/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/item/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "libs/shared/models/**/*.ts"
+              "libs/domain/item/src/**/*.ts",
+              "libs/domain/item/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/models"
-          ],
+          "outputs": ["coverage/libs/domain/item"],
           "options": {
-            "jestConfig": "libs/shared/models/jest.config.js",
+            "jestConfig": "libs/domain/item/jest.config.js",
             "passWithNoTests": true
           }
         }

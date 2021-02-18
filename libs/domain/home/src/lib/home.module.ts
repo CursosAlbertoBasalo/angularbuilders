@@ -14,7 +14,11 @@ import { ViewModeComponent } from './ui/view-mode/view-mode.component';
     HttpClientModule,
     UiModule,
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: HomePage },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomePage,
+      },
     ]),
   ],
   declarations: [

@@ -1,9 +1,7 @@
+import { ApiArray, Category, Item } from '@ab/models';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { ApiArray } from '../models/apiArray';
-import { Category } from '../models/category';
-import { Item } from '../models/item';
 import { viewModes } from '../models/viewModes';
 
 @Injectable({ providedIn: 'root' })

@@ -1,6 +1,6 @@
 <article>
   <header>
-    <ab-ui-title [props]="props.title"></ab-ui-title>
+    <ab-ui-title [props]="{ caption: props.title, link: props.link }"></ab-ui-title>
   </header>
   <main>
     {{ props.description }}
