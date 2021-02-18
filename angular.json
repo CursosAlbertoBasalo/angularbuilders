@@ -350,6 +350,80 @@
           }
         }
       }
+    },
+    "domain-search": {
+      "projectType": "library",
+      "root": "libs/domain/search",
+      "sourceRoot": "libs/domain/search/src",
+      "prefix": "ab-search",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/domain/search/tsconfig.lib.json",
+            "project": "libs/domain/search/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/search/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain/search/src/**/*.ts",
+              "libs/domain/search/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/domain/search"],
+          "options": {
+            "jestConfig": "libs/domain/search/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "domain-term": {
+      "projectType": "library",
+      "root": "libs/domain/term",
+      "sourceRoot": "libs/domain/term/src",
+      "prefix": "ab-term",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/domain/term/tsconfig.lib.json",
+            "project": "libs/domain/term/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/term/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain/term/src/**/*.ts",
+              "libs/domain/term/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/domain/term"],
+          "options": {
+            "jestConfig": "libs/domain/term/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

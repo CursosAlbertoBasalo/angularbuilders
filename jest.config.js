@@ -6,5 +6,7 @@ module.exports = {
     '<rootDir>/libs/domain/home',
     '<rootDir>/libs/shared/models',
     '<rootDir>/libs/domain/item',
+    '<rootDir>/libs/domain/search',
+    '<rootDir>/libs/domain/term',
   ],
 };

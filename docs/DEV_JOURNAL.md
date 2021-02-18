@@ -55,13 +55,27 @@ ng g c templates/loading --project shared-ui  --export --skip-tests=false
 
 ```bash
 # 🗄 Domain 📚 Item Lib
-ng g library --name=home --directory=domain --buildable --enableIvy --importPath=@ab/home --lazy --prefix=ab-home --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+ng g library --name=item --directory=domain --buildable --enableIvy --importPath=@ab/item --lazy --prefix=ab-item --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
 
 # 📄 Item Page
 ng g c item --project=domain-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 
-# 📄 Item data Service
+# 👷‍♂️ Item data Service
 ng g s data/item --project=domain-item
+
+
+# 🗄 Domain 📚 Search Lib
+ng g library search --directory=domain --buildable --enableIvy --importPath=@ab/search --lazy --prefix=ab-search --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+
+# 📄 Search Page
+ng g c search --project=domain-search --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+
+
+# 🗄 Domain 📚 Term Lib
+ng g library term --directory=domain --buildable --enableIvy --importPath=@ab/term --prefix=ab-term --simpleModuleName --strict --tags='domain, feature'
+
+# 📄 Term Component
+ng g c term --project=domain-term --flat --inlineStyle --skipTests=false --export=true
 ```
 
 ---
