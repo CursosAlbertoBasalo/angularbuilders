@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from './components/title/title.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
+import { TitleComponent } from './components/title/title.component';
 import { LoadingComponent } from './templates/loading/loading.component';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   declarations: [TitleComponent, CardComponent, LoadingComponent],
   exports: [TitleComponent, CardComponent, LoadingComponent],
 })

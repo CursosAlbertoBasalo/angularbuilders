@@ -1,6 +1,6 @@
+import { Item } from '@ab/models';
 import { Card } from '@ab/ui';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Item } from '../../models/item';
 
 @Component({
   selector: 'ab-home-featured',
@@ -15,6 +15,7 @@ export class FeaturedComponent {
       title: item.name,
       description: item.description || '',
       footer: '',
+      link: `item/${item.id}`,
     };
     return card;
   }

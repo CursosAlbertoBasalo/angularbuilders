@@ -1,4 +1,4 @@
-# 0. Nx, grandes proyectos requieren mejores herramientas
+# 0 - Nx workspace
 
 ```bash
 
@@ -24,13 +24,13 @@ ng g @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storybook/ang
 
 ---
 
-# 1. Componentes y comunicación asíncrona
+# 1 - Async components
 
 ```bash
-# 📄 Compoenete página
+# 📄 Home Page
 ng g c home --project=domain-home  --flat --inlineStyle --skipSelector --type=Page --skip-tests=false
 
-# 👷‍♂️ Servicio de acceso a datos
+# 👷‍♂️ Home data Service
 ng g s data/home --project=domain-home
 
 # 🦠 Presentacional de categorias
@@ -47,6 +47,21 @@ ng g c components/title --project shared-ui  --export
 ng g c components/card --project shared-ui  --export
 # 📜 Plantilla loading (TEMPLATES)
 ng g c templates/loading --project shared-ui  --export --skip-tests=false
+```
+
+---
+
+# 2 - Navigation data
+
+```bash
+# 🗄 Domain 📚 Item Lib
+ng g library --name=home --directory=domain --buildable --enableIvy --importPath=@ab/home --lazy --prefix=ab-home --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+
+# 📄 Item Page
+ng g c item --project=domain-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+
+# 📄 Item data Service
+ng g s data/item --project=domain-item
 ```
 
 ---

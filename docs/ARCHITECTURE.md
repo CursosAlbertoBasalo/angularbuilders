@@ -2,6 +2,8 @@
 
 - ## 📕 AppModule
 
+  - ### 🗺 Routes
+
   - ### 📄 AppComponent
 
 ---
@@ -22,11 +24,29 @@
 
   - ### 👷‍♂️ HomeService
 
+- ## 📗 ItemModule
+
+  - ### 📄 ItemPage
+
+  - ### 👷‍♂️ ItemService
+
+  - ### 🤠 ItemResolver
+
 ---
 
 ---
 
 # 📚 shared-models
+
+- ## 🧐 Models logic
+
+  - ### 🎫 ApiArray
+
+  - ### 🎫 ApiObject
+
+  - ### 🎫 Category
+
+  - ### 🎫 Item
 
 # 📚 shared-data
 
@@ -41,3 +61,7 @@
   - ### 🧬 CardComponent
 
   - ### 📜 LoadingComponent
+
+  - ### 🎫 Title
+
+  - ### 🎫 Card

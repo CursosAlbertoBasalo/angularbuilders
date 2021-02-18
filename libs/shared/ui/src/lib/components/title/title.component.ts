@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Title } from '../../models/title';
 
 @Component({
   selector: 'ab-ui-title',
@@ -7,6 +8,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TitleComponent {
-  // ToDo: icon, link, size...
-  @Input() props!: string;
+  // ToDo: extract to a model interface
+  @Input() props!: Title;
 }
