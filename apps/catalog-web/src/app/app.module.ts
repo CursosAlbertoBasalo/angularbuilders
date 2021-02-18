@@ -1,3 +1,4 @@
+import { TermModule } from '@ab/term';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,11 +13,21 @@ const routes: Routes = [
     path: 'item',
     loadChildren: () => import('@ab/item').then((module) => module.ItemModule),
   },
+  {
+    path: 'search',
+    loadChildren: () =>
+      import('@ab/search').then((module) => module.SearchModule),
+  },
 ];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    TermModule,
+    RouterModule.forRoot(routes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
