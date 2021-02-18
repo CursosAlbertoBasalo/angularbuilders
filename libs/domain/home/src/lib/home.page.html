@@ -1,6 +1,18 @@
-<ab-ui-title props="Explore the resource catalog"></ab-ui-title>
-<ab-home-view-mode (viewMode)="changeViewMode($event)"></ab-home-view-mode>
-<ab-home-categories *ngIf="categories$ | async as categories" [props]="categories">
-</ab-home-categories>
-<ab-home-featured *ngIf="featured$ | async as featured" [props]="featured">
-</ab-home-featured>
+<header>
+  <ab-ui-title props="Explore the resource catalog"></ab-ui-title>
+</header>
+<ab-ui-loading [props]="categories$" (data)="setCategories($event)">
+  <main>
+    <ab-home-view-mode (viewMode)="changeViewMode($event)"></ab-home-view-mode>
+    <ab-home-categories
+                        [props]="categories">
+    </ab-home-categories>
+  </main>
+</ab-ui-loading>
+<ab-ui-loading [props]="featured$" (data)="setFeatured($event)">
+  <main>
+    <ab-home-featured
+                      [props]="featured">
+    </ab-home-featured>
+  </main>
+</ab-ui-loading>

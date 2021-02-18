@@ -10,12 +10,12 @@
 
   --color: #3ad29f;
   --color-text: #333;
-  --color-bg: #fff;
+  --color-bg: #fcfcfc;
   --color-accent: #f73454;
 
   --color-secondary: #28aaff;
   --color-text-secondary: #3ad29f;
-  --color-bg-secondary: #f1f1f1;
+  --color-bg-secondary: #f4f4f4;
   --color-secondary-accent: #005bc4;
 
   --color-shadow: #ccc;
@@ -26,9 +26,9 @@
   --justify-important: center;
   --justify-normal: left;
   --line-height: 1.5;
-  --width-card: 285px;
-  --width-card-medium: 460px;
-  --width-card-wide: 800px;
+  --width-card: 275px;
+  --width-card-medium: 415px;
+  --width-card-wide: 825px;
   --width-content: 1080px;
 }
 
@@ -70,7 +70,7 @@ header,
 main {
   margin: 0 auto;
   max-width: var(--width-content);
-  padding: 2rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 
 hr {
@@ -106,7 +106,7 @@ header a strong {
 }
 
 header nav img {
-  margin: 1rem 0;
+  margin: 0rem 0;
 }
 
 /* ==================== */
@@ -117,7 +117,8 @@ nav {
   display: flex;
   font-weight: bold;
   justify-content: space-between;
-  margin-bottom: 7rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-bg-secondary);
 }
 
 nav ul {
@@ -161,6 +162,8 @@ h4,
 h5,
 h6 {
   line-height: var(--line-height);
+  margin-block-start: 0.33em;
+  margin-block-end: 0.33em;
 }
 
 mark {

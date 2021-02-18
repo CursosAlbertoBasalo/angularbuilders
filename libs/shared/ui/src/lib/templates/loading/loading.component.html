@@ -1,0 +1,14 @@
+<section>
+  <ng-content *ngIf="data$ | async" select="main"></ng-content>
+  <aside *ngIf="loading">
+    <header>
+      <h4>📡 Waiting... No data yet 📡</h4>
+    </header>
+  </aside>
+  <aside *ngIf="errorMessage">
+    <header>
+      <h3>💫 Houston, we have a problem! 💫</h3>
+      <h5>{{ errorMessage }}</h5>
+    </header>
+  </aside>
+</section>
