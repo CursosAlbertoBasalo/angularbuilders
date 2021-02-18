@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeService } from './data/home.service';
-import { Category } from './models/Category';
-import { Item } from './models/Item';
+import { Category } from './models/category';
+import { Item } from './models/item';
 import { viewModes } from './models/viewModes';
 
 @Component({

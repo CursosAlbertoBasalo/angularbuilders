@@ -1,6 +1,6 @@
 import { Card } from '@ab/ui';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Item } from '../../models/Item';
+import { Item } from '../../models/item';
 
 @Component({
   selector: 'ab-home-featured',

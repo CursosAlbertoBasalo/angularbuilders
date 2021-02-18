@@ -1,6 +1,6 @@
 import { Card } from '@ab/ui';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Category } from '../../models/Category';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'ab-home-categories',
