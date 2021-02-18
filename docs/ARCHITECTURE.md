@@ -10,11 +10,11 @@
 
   - ### 📄 HomePage
 
-  - ### 🧩 ViewModeComponent
+  - ### 🦠 ViewModeComponent
 
-  - ### 🧩 CategoriesComponent
+  - ### 🦠 CategoriesComponent
 
-  - ### 🧩 FeaturedComponent
+  - ### 🦠 FeaturedComponent
 
   - ### 👷‍♂️ HomeService
 
