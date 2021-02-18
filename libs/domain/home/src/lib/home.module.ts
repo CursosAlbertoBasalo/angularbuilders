@@ -1,3 +1,4 @@
+import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { ViewModeComponent } from './ui/view-mode/view-mode.component';
   imports: [
     CommonModule,
     HttpClientModule,
+    UiModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: HomePage },
     ]),
