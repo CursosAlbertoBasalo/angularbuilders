@@ -2,9 +2,9 @@
 
 - ## 📕 AppModule
 
-  - ### 🧭 Routes
-
   - ### 📄 AppComponent
+
+- ## 🧭 AppRoutingModule
 
 ---
 
@@ -40,6 +40,10 @@
 
   - ### 📄 SearchPage
 
+  - ### 🦠 ItemsComponent
+
+  - ### 👷‍♂️ SearchService
+
 # 📚 domain-term
 
 - ## 📘 TermModule
@@ -63,6 +67,8 @@
   - ### 🎫 Category
 
   - ### 🎫 Item
+
+  - ### 👷‍♂️ HeadService
 
 # 📚 shared-ui
 

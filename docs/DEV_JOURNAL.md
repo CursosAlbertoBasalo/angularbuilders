@@ -33,19 +33,19 @@ ng g c home --project=domain-home  --flat --inlineStyle --skipSelector --type=Pa
 # 👷‍♂️ Home data Service
 ng g s data/home --project=domain-home
 
-# 🦠 Presentacional de categorias
+# 🦠 Presentational categories component
 ng g c ui/categories --project domain-home
-# 🦠 Presentacional de elementos destacados
+# 🦠 Presentational categories component
 ng g c ui/featured --project domain-home
-# 🦠 Presentacional de modos de visualización
+# 🦠 Presentational view modes component
 ng g c ui/view-mode --project domain-home
 
 
-# ☢ Elemento título (ATOMS)
+# ☢ Presentational title component (ATOMS)
 ng g c components/title --project shared-ui  --export
-# 🧬 Bloque tarjeta (MOLECULES)
+# 🧬 Presentational card component (MOLECULES)
 ng g c components/card --project shared-ui  --export
-# 📜 Plantilla loading (TEMPLATES)
+# 📜 Presentational loading component (TEMPLATES)
 ng g c templates/loading --project shared-ui  --export --skip-tests=false
 ```
 
@@ -77,12 +77,16 @@ ng g library term --directory=domain --buildable --enableIvy --importPath=@ab/te
 # 📄 Term Component
 ng g c term --project=domain-term --flat --inlineStyle --skipTests=false --export=true
 
+# 👷‍♂️ Search data Service
 ng g s data/search --project domain-search
+# 🦠 Presentacional items component
 ng g c ui/items --project domain-search --change-detection OnPush --skip-tests
 
-
+# 🧭 App routing module
 ng g @schematics/angular:module app-routing --project catalog-web --module app
-ng g @schematics/angular:service app-routing/head --project catalog-web
-```
+# 👷‍♂️ Head data Service
+ng g s head --project shared-data
 
+# 🚮 Remove shared-models in favor of shared-data
 ng g @nrwl/workspace:remove shared-models
+```
