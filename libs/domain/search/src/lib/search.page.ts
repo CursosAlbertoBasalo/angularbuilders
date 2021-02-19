@@ -1,4 +1,4 @@
-import { Item } from '@ab/models';
+import { Item } from '@ab/data';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';

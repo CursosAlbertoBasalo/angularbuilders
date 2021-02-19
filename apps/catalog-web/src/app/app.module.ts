@@ -1,3 +1,4 @@
+import { DataModule } from '@ab/data';
 import { TermModule } from '@ab/term';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,13 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, TermModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    TermModule,
+    AppRoutingModule,
+    DataModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

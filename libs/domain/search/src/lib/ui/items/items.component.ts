@@ -1,7 +1,6 @@
-import { Item } from '@ab/models';
-import { Card } from '@ab/ui';
+import { Item } from '@ab/data';
+import { Card, Title } from '@ab/ui';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Title } from 'libs/shared/ui/src/lib/models/title';
 
 @Component({
   selector: 'ab-search-items',

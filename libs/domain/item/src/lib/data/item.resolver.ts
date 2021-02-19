@@ -1,4 +1,4 @@
-import { Item } from '@ab/models';
+import { Item } from '@ab/data';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,

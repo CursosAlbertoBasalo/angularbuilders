@@ -1,4 +1,4 @@
-import { ApiObject, Item } from '@ab/models';
+import { ApiObject, Item } from '@ab/data';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';

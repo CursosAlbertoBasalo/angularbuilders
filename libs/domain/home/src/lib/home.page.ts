@@ -1,4 +1,4 @@
-import { Category, Item } from '@ab/models';
+import { Category, Item } from '@ab/data';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeService } from './data/home.service';

@@ -1,3 +1,4 @@
+import { HeadService } from '@ab/data';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
@@ -8,7 +9,6 @@ import {
   Routes,
 } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { HeadService } from './head.service';
 const routes: Routes = [
   {
     path: '',

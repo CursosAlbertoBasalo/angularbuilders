@@ -52,9 +52,9 @@
 
 ---
 
-# 📚 shared-models
+# 📚 shared-data
 
-- ## 🧐 Models logic
+- ## 📘 DataModule
 
   - ### 🎫 ApiArray
 
@@ -63,10 +63,6 @@
   - ### 🎫 Category
 
   - ### 🎫 Item
-
-# 📚 shared-data
-
-- ## 📘 DataModule
 
 # 📚 shared-ui
 

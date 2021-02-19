@@ -1,3 +1,4 @@
+import { DataModule } from '@ab/data';
 import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +12,7 @@ import { ItemPage } from './item.page';
     CommonModule,
     HttpClientModule,
     UiModule,
+    DataModule,
     RouterModule.forChild([
       {
         path: ':id',
