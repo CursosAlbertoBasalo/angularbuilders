@@ -1,5 +1,5 @@
 <header>
-  <ab-ui-title props="Featured resources"></ab-ui-title>
+  <ab-ui-title [props]="{caption:'Featured resources'}"></ab-ui-title>
 </header>
 <section>
   <ab-ui-card *ngFor="let item of props" [props]="toCard(item)"></ab-ui-card>

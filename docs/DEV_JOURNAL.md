@@ -79,4 +79,8 @@ ng g c term --project=domain-term --flat --inlineStyle --skipTests=false --expor
 
 ng g s data/search --project domain-search
 ng g c ui/items --project domain-search --change-detection OnPush --skip-tests
+
+
+ng g @schematics/angular:module app-routing --project catalog-web --module app
+ng g @schematics/angular:service app-routing/head --project catalog-web
 ```
