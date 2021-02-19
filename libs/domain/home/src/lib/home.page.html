@@ -1,5 +1,5 @@
 <header>
-  <ab-ui-title props="{ caption: 'Explore the resource catalog'}"></ab-ui-title>
+  <ab-ui-title [props]="{ caption: 'Explore the resource catalog'}"></ab-ui-title>
 </header>
 <ab-ui-loading [props]="categories$" (data)="setCategories($event)">
   <main>

@@ -1,2 +1,2 @@
-<ab-search-items [props]="items$ | async">
+<ab-search-items *ngIf="items$ | async as items" [props]="items">
 </ab-search-items>
