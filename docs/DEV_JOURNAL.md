@@ -76,6 +76,7 @@ ng g library term --directory=domain --buildable --enableIvy --importPath=@ab/te
 
 # 📄 Term Component
 ng g c term --project=domain-term --flat --inlineStyle --skipTests=false --export=true
-```
 
----
+ng g s data/search --project domain-search
+ng g c ui/items --project domain-search --change-detection OnPush --skip-tests
+```

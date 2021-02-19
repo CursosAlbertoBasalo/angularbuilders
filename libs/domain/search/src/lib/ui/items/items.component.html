@@ -1,0 +1,6 @@
+<header>
+  <ab-ui-title [props]="toTitle()"></ab-ui-title>
+</header>
+<section>
+  <ab-ui-card *ngFor="let item of props" [props]="toCard(item)"></ab-ui-card>
+</section>
