@@ -1,3 +1,4 @@
+import { DataModule } from '@ab/data';
 import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +14,7 @@ import { ViewModeComponent } from './ui/view-mode/view-mode.component';
     CommonModule,
     HttpClientModule,
     UiModule,
+    DataModule,
     RouterModule.forChild([
       {
         path: '',

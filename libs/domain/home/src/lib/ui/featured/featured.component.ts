@@ -1,4 +1,4 @@
-import { Item } from '@ab/models';
+import { Item } from '@ab/data';
 import { Card } from '@ab/ui';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 

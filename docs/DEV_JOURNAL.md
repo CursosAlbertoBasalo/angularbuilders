@@ -84,3 +84,5 @@ ng g c ui/items --project domain-search --change-detection OnPush --skip-tests
 ng g @schematics/angular:module app-routing --project catalog-web --module app
 ng g @schematics/angular:service app-routing/head --project catalog-web
 ```
+
+ng g @nrwl/workspace:remove shared-models

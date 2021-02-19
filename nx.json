@@ -26,7 +26,6 @@
     "shared-data": { "tags": ["shared", "data"] },
     "shared-ui": { "tags": ["shared", "ui"] },
     "domain-home": { "tags": ["domain", "route"] },
-    "shared-models": { "tags": ["shared", "models"] },
     "domain-item": { "tags": ["domain", "route"] },
     "domain-search": { "tags": ["domain", "route"] },
     "domain-term": { "tags": ["domain", "route"] }
