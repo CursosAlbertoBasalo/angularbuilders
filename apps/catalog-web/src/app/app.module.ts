@@ -2,32 +2,12 @@ import { TermModule } from '@ab/term';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
-  },
-  {
-    path: 'item',
-    loadChildren: () => import('@ab/item').then((module) => module.ItemModule),
-  },
-  {
-    path: 'search',
-    loadChildren: () =>
-      import('@ab/search').then((module) => module.SearchModule),
-  },
-];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    TermModule,
-    RouterModule.forRoot(routes),
-  ],
+  imports: [BrowserModule, HttpClientModule, TermModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

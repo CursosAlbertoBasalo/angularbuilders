@@ -1,5 +1,5 @@
 <header>
-  <ab-ui-title props="Categories"></ab-ui-title>
+  <ab-ui-title [props]="{ caption:'Categories'}"></ab-ui-title>
 </header>
 <section>
   <ab-ui-card *ngFor="let category of props" [props]="toCard(category)"></ab-ui-card>
