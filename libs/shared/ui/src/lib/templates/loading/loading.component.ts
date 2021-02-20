@@ -38,6 +38,7 @@ export class LoadingComponent implements OnChanges {
         error: (error) => {
           this.loading = false;
           this.errorMessage = error.message;
+          // ! async pipe does not complete, and does not call the cdr
           this.cdr.markForCheck();
         },
       })
