@@ -21,7 +21,8 @@
       "@ab/models": ["libs/shared/models/src/index.ts"],
       "@ab/item": ["libs/domain/item/src/index.ts"],
       "@ab/search": ["libs/domain/search/src/index.ts"],
-      "@ab/term": ["libs/domain/term/src/index.ts"]
+      "@ab/term": ["libs/domain/term/src/index.ts"],
+      "@ab/category": ["libs/domain/category/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

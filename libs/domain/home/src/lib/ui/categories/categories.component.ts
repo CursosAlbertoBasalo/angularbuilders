@@ -15,6 +15,7 @@ export class CategoriesComponent {
       title: category.name,
       description: category.description || '',
       footer: '',
+      link: `category/${category.id}`,
     };
     return card;
   }

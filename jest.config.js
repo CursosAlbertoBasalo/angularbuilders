@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/domain/item',
     '<rootDir>/libs/domain/search',
     '<rootDir>/libs/domain/term',
+    '<rootDir>/libs/domain/category',
   ],
 };
