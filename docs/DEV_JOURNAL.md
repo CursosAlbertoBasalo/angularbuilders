@@ -90,3 +90,16 @@ ng g s head --project shared-data
 # 🚮 Remove shared-models in favor of shared-data
 ng g @nrwl/workspace:remove shared-models
 ```
+
+# 3 - Async data flow
+
+```bash
+# 🗄 Domain 📚 Category Lib
+ng g library --name=category --directory=domain --buildable --enableIvy --importPath=@ab/category --lazy --prefix=ab-category --routing --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
+
+# 📄 Category Page
+ng g c category --project=domain-category --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+
+# 👷‍♂️ Category data Service
+ng g s data/category --project=domain-category
+```

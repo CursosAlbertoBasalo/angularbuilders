@@ -22,6 +22,11 @@ const routes: Routes = [
     loadChildren: () => import('@ab/item').then((module) => module.ItemModule),
   },
   {
+    path: 'category',
+    loadChildren: () =>
+      import('@ab/category').then((module) => module.CategoryModule),
+  },
+  {
     path: 'search',
     data: {
       pageTitle: '🔍 search',

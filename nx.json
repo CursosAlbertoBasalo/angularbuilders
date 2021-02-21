@@ -28,6 +28,7 @@
     "domain-home": { "tags": ["domain", "route"] },
     "domain-item": { "tags": ["domain", "route"] },
     "domain-search": { "tags": ["domain", "route"] },
-    "domain-term": { "tags": ["domain", "route"] }
+    "domain-term": { "tags": ["domain", "route"] },
+    "domain-category": { "tags": ["domain", "route"] }
   }
 }
