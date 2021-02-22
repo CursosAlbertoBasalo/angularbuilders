@@ -1,5 +1,5 @@
 <section>
-  <ng-content *ngIf="data$ | async" select="main"></ng-content>
+  <ng-content *ngIf="props | async" select="main"></ng-content>
   <aside *ngIf="loading">
     <header>
       <h4>📡 Waiting... No data yet 📡</h4>
