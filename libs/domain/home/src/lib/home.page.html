@@ -1,18 +1,14 @@
 <header>
   <ab-ui-title props="Explore the resource catalog"></ab-ui-title>
 </header>
-<ab-ui-loading [props]="categories$" (data)="setCategories($event)">
+<ab-ui-loading [props]="categories$" (data)="categories = $event">
   <main>
     <ab-home-view-mode (viewMode)="changeViewMode($event)"></ab-home-view-mode>
-    <ab-home-categories
-                        [props]="categories">
-    </ab-home-categories>
+    <ab-home-categories [props]="categories"> </ab-home-categories>
   </main>
 </ab-ui-loading>
-<ab-ui-loading [props]="featured$" (data)="setFeatured($event)">
+<ab-ui-loading [props]="featured$" (data)="featured = $event">
   <main>
-    <ab-home-featured
-                      [props]="featured">
-    </ab-home-featured>
+    <ab-home-featured [props]="featured"> </ab-home-featured>
   </main>
 </ab-ui-loading>

@@ -4,9 +4,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
+  OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -17,19 +16,20 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./loading.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoadingComponent implements OnChanges {
-  @Input() props!: Observable<unknown>;
-  @Output() data = new EventEmitter<unknown>();
-  data$!: Observable<unknown>;
+export class LoadingComponent implements OnInit {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Input() props!: Observable<any>;
+  @Output() data = new EventEmitter<never>();
+
   loading = true;
   errorMessage = '';
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnInit(): void {
     this.loading = true;
     this.errorMessage = '';
-    this.data$ = this.props.pipe(
+    this.props = this.props.pipe(
       tap({
         next: (data) => {
           this.loading = false;
