@@ -45,7 +45,7 @@ export class AppRoutingModule {
     this.router.events
       .pipe(
         filter((routerEvent) => routerEvent instanceof NavigationEnd),
-        map((routerEvent) => this.activatedRoute.firstChild?.snapshot.data),
+        map(() => this.activatedRoute.firstChild?.snapshot.data),
         filter((routeData) => !!routeData)
       )
       .subscribe({

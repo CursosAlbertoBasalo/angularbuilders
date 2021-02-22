@@ -1,4 +1,4 @@
-# 0 - Nx workspace
+# ▶ 0 - Nx workspace
 
 ```bash
 
@@ -24,7 +24,7 @@ ng g @nrwl/storybook:configuration --name=shared-ui --uiFramework=@storybook/ang
 
 ---
 
-# 1 - Async components
+# ▶ 1 - Async components
 
 ```bash
 # 📄 Home Page
@@ -51,36 +51,48 @@ ng g c templates/loading --project shared-ui  --export --skip-tests=false
 
 ---
 
-# 2 - Navigation data
+# ▶ 2 - Navigation data
 
 ```bash
+# ⏩ 0 - Enrutado para item/:id
+
 # 🗄 Domain 📚 Item Lib
 ng g library --name=item --directory=domain --buildable --enableIvy --importPath=@ab/item --lazy --prefix=ab-item --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
-
 # 📄 Item Page
 ng g c item --project=domain-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
-
 # 👷‍♂️ Item data Service
 ng g s data/item --project=domain-item
 
+# ⏩ 1 -  Ejecuciones previas a la navegación
 
-# 🗄 Domain 📚 Search Lib
-ng g library search --directory=domain --buildable --enableIvy --importPath=@ab/search --lazy --prefix=ab-search --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+# 🤠 Resolvers
+ng g resolver data/item --project=domain-item
 
-# 📄 Search Page
-ng g c search --project=domain-search --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 
+# ⏩ 2 - Parámetros y consultas
 
 # 🗄 Domain 📚 Term Lib
-ng g library term --directory=domain --buildable --enableIvy --importPath=@ab/term --prefix=ab-term --simpleModuleName --strict --tags='domain, feature'
-
+ng g library term --directory=domain --buildable --enableIvy --importPath=@ab/term
+  --prefix=ab-term --simpleModuleName --strict --tags='domain, feature'
 # 📄 Term Component
 ng g c term --project=domain-term --flat --inlineStyle --skipTests=false --export=true
 
+# 🗄 Domain 📚 Search Lib
+ng g library search --directory=domain --buildable --enableIvy --importPath=@ab/search --lazy --prefix=ab-search --routing --parentModule=apps\catalog-web\src\app\app.module.ts --simpleModuleName --strict --tags='domain, route'
+# 📄 Search Page
+ng g c search --project=domain-search --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+# 👷‍♂️ Search data Service
 ng g s data/search --project domain-search
+# 🦠 Presentacional de elementos encontrados
 ng g c ui/items --project domain-search --change-detection OnPush --skip-tests
 
 
-ng g @schematics/angular:module app-routing --project catalog-web --module app
-ng g @schematics/angular:service app-routing/head --project catalog-web
+# ⏩ 3 - Ejecución posterior a la navegación
+
+#  App Router propio
+ng g m app-routing --project catalog-web --module app
+# 🛒 HeadService for SEO and metadata...
+ng g s app-routing/head --project catalog-web
+
+
 ```
