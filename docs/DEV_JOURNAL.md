@@ -102,4 +102,7 @@ ng g c category --project=domain-category --flat --inlineStyle --skipSelector --
 
 # 👷‍♂️ Category data Service
 ng g s data/category --project=domain-category
+
+# 🕵️‍♂️ Interceptor
+ng g interceptor adapter --project shared-data
 ```
