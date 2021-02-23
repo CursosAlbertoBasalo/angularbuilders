@@ -1,14 +1,12 @@
 <section>
-  <ng-content *ngIf="props | async" select="main"></ng-content>
-  <aside *ngIf="loading">
-    <header>
+  <ng-content select="main"></ng-content>
+  <aside *ngIf="audit$ | async as audit">
+    <header *ngIf="audit.isLoading">
       <h4>📡 Waiting... No data yet 📡</h4>
     </header>
-  </aside>
-  <aside *ngIf="errorMessage">
-    <header>
+    <header *ngIf="audit.errorMessage">
       <h3>💫 Houston, we have a problem! 💫</h3>
-      <h5>{{ errorMessage }}</h5>
+      <h5>{{ audit.errorMessage }}</h5>
     </header>
   </aside>
 </section>

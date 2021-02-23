@@ -1,41 +1,13 @@
-<!-- <header>
-  <ab-ui-title [props]="{caption:'🚴‍♂️ Secuenciales'}"></ab-ui-title>
-</header>
-<ab-ui-loading [props]="category$" (data)="setCategory($event)">
-  <main>
-    <ab-ui-card [props]="categoryToCard(category)"></ab-ui-card>
-  </main>
-</ab-ui-loading>
-<ab-ui-loading [props]="items$" (data)="setItems($event)">
-  <main>
-    <section>
-      <ab-ui-card *ngFor="let item of items" [props]="itemToCard(item)"></ab-ui-card>
-    </section>
-  </main>
-</ab-ui-loading> -->
-<!-- <header>
-  <ab-ui-title [props]="{caption:'🏍 Paralelas que se esperan'}"></ab-ui-title>
-</header>
-<ab-ui-loading [props]="allResults$" (data)="setResults($event)">
-  <main>
-    <section>
-      <ab-ui-card [props]="categoryToCard(allResults[0])"></ab-ui-card>
-    </section>
-    <section>
-      <ab-ui-card *ngFor="let item of allResults[1]" [props]="itemToCard(item)"></ab-ui-card>
-    </section>
-  </main>
-</ab-ui-loading> -->
 <header>
   <ab-ui-title [props]="{caption:'🏎  Paralelas independientes'}"></ab-ui-title>
 </header>
-<ab-ui-loading [props]="category$" (data)="setCategory($event)">
-  <main>
+<ab-ui-loading>
+  <main *ngIf="category$ | async as category">
     <ab-ui-card [props]="categoryToCard(category)"></ab-ui-card>
   </main>
 </ab-ui-loading>
-<ab-ui-loading [props]="items$" (data)="setItems($event)">
-  <main>
+<ab-ui-loading>
+  <main *ngIf="items$ | async as items">
     <section>
       <ab-ui-card *ngFor="let item of items" [props]="itemToCard(item)"></ab-ui-card>
     </section>

@@ -107,4 +107,9 @@ ng g s data/category --project=domain-category
 ng g interceptor adapter --project shared-data
 # 🕵️‍♂️ Retry Interceptor
 ng g interceptor retry --project shared-data
+# 🕵️‍♂️ Audit Interceptor
+ng g interceptor audit --project shared-data
+# 🏬 Store
+ng g class store --project shared-data
+ng g @schematics/angular:service audit --project shared-data
 ```
