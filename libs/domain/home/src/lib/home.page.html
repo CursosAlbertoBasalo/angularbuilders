@@ -1,14 +1,14 @@
 <header>
   <ab-ui-title [props]="{ caption:'Explore the resource catalog'}"></ab-ui-title>
 </header>
-<ab-ui-loading [props]="categories$" (data)="categories = $event">
-  <main>
+<ab-ui-loading>
+  <main *ngIf="categories$ | async as categories">
     <ab-home-view-mode (viewMode)="changeViewMode($event)"></ab-home-view-mode>
     <ab-home-categories [props]="categories"> </ab-home-categories>
   </main>
 </ab-ui-loading>
-<ab-ui-loading [props]="featured$" (data)="featured = $event">
-  <main>
+<ab-ui-loading>
+  <main *ngIf="featured$ | async as featured">
     <ab-home-featured [props]="featured"> </ab-home-featured>
   </main>
 </ab-ui-loading>

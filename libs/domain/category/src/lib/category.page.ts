@@ -21,12 +21,9 @@ type AllResults = [Category, Item[]];
   ],
 })
 export class CategoryPage implements OnInit {
-  category: Category = { id: '', name: '' };
-  category$: Observable<Category> = of(this.category);
-  items: Item[] = [];
-  items$: Observable<Item[]> = of(this.items);
-  allResults: AllResults = [this.category, this.items];
-  allResults$: Observable<[Category, Item[]]> = of(this.allResults);
+  category$: Observable<Category> = of({ id: '', name: '' });
+  items$: Observable<Item[]> = of([]);
+  allResults$: Observable<[Category, Item[]]> = of([{ id: '', name: '' }, []]);
 
   constructor(
     private route: ActivatedRoute,
@@ -96,14 +93,5 @@ export class CategoryPage implements OnInit {
       link: `../../item/${item.id}`,
     };
     return card;
-  }
-  setCategory(data: unknown) {
-    this.category = data as Category;
-  }
-  setItems(data: unknown) {
-    this.items = data as Item[];
-  }
-  setResults(data: unknown) {
-    this.allResults = data as AllResults;
   }
 }

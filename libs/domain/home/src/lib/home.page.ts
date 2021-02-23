@@ -11,9 +11,7 @@ import { viewModes } from './models/viewModes';
 })
 export class HomePage {
   categories$: Observable<Category[]>;
-  categories: Category[] = [];
   featured$: Observable<Item[]>;
-  featured: Item[] = [];
 
   constructor(private service: HomeService) {
     this.categories$ = service.getCategories$(viewModes.sortAddedDate);
