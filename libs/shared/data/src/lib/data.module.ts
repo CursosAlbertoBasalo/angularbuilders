@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AdapterInterceptor } from './adapter.interceptor';
+import { RetryInterceptor } from './retry.interceptor';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
-  exports : [HttpClientModule],
+  exports: [HttpClientModule],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: RetryInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AdapterInterceptor, multi: true },
   ],
 })
