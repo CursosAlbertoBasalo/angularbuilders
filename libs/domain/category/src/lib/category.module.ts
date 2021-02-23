@@ -1,7 +1,6 @@
 import { DataModule } from '@ab/data';
 import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoryPage } from './category.page';
@@ -10,7 +9,7 @@ import { CategoryPage } from './category.page';
   imports: [
     CommonModule,
     DataModule,
-    HttpClientModule,
+    DataModule,
     UiModule,
     RouterModule.forChild([
       { path: ':id', pathMatch: 'full', component: CategoryPage },
