@@ -1,5 +1,5 @@
 <header>
-  <ab-ui-title [props]="{caption:'🏎  Paralelas independientes'}"></ab-ui-title>
+  <ab-ui-title [props]="{caption:'Category with Items'}"></ab-ui-title>
 </header>
 <ab-ui-loading>
   <main *ngIf="category$ | async as category">
@@ -13,3 +13,17 @@
     </section>
   </main>
 </ab-ui-loading>
+<!-- <span *ngIf="allResults$ | async as allResults">
+  <ab-ui-loading>
+    <main>
+      <ab-ui-card [props]="categoryToCard(allResults[0])"></ab-ui-card>
+    </main>
+  </ab-ui-loading>
+  <ab-ui-loading>
+    <main>
+      <section>
+        <ab-ui-card *ngFor="let item of allResults[1]" [props]="itemToCard(item)"></ab-ui-card>
+      </section>
+    </main>
+  </ab-ui-loading>
+</span> -->

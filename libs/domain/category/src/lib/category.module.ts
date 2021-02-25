@@ -9,7 +9,6 @@ import { CategoryPage } from './category.page';
   imports: [
     CommonModule,
     DataModule,
-    DataModule,
     UiModule,
     RouterModule.forChild([
       { path: ':id', pathMatch: 'full', component: CategoryPage },

@@ -31,11 +31,20 @@ export class CategoryPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.getCategoryAndThenItsItems();
+    this.getCategoryAndThenItsItems();
     // this.getCategoryAndItsItemsInParallelWaitingForTheLatest();
-    this.getCategoryAndItsItemsInParallel();
+    // this.getCategoryAndItsItemsInParallel();
   }
 
+  /*
+  Performance 68
+  First Contentful Paint 0.7 s
+  Speed Index 0.8 s
+  Largest Contentful Paint 4.5 s
+  Time to Interactive 4.0 s
+  Total Blocking Time 140 ms
+  Cumulative Layout Shift 0.123
+  */
   private getCategoryAndThenItsItems() {
     this.category$ = this.route.params.pipe(
       map((params) => params.id),
@@ -48,6 +57,15 @@ export class CategoryPage implements OnInit {
     );
   }
 
+  /*
+    Performance 70
+    First Contentful Paint 0.5 s
+    Speed Index 0.5 s
+    Largest Contentful Paint 4.3 s
+    Time to Interactive 3.9 s
+    Total Blocking Time 160 ms
+    Cumulative Layout Shift 0.041
+  */
   private getCategoryAndItsItemsInParallelWaitingForTheLatest() {
     this.allResults$ = this.route.params.pipe(
       map((params) => params.id),
@@ -58,6 +76,15 @@ export class CategoryPage implements OnInit {
     );
   }
 
+  /*
+  Performance 70
+  First Contentful Paint 0.7 s
+  Speed Index 0.8 s
+  Largest Contentful Paint 4.5 s
+  Time to Interactive 4.0 s
+  Total Blocking Time 110 ms
+  Cumulative Layout Shift 0.061
+  */
   private getCategoryAndItsItemsInParallel() {
     this.route.params
       .pipe(

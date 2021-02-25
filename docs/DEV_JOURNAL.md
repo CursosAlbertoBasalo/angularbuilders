@@ -112,4 +112,6 @@ ng g interceptor audit --project shared-data
 # 🏬 Store
 ng g class store --project shared-data
 ng g @schematics/angular:service audit --project shared-data
+
+// ToDo: Category items counter....
 ```
