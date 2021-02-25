@@ -13,6 +13,11 @@ export class HomeService {
       .get<Category[]>(url)
       .pipe(map((data) => this.mapCategoryResults(data, viewMode)));
   }
+  getCountItemsByCategoryId$(categoryId: string) {
+    const url = `https://angularbuilders-pre.herokuapp.com/api/v1/categories/${categoryId}/items/count`;
+    return this.http.get<number>(url);
+  }
+
   getFeatured$() {
     const url = 'https://angularbuilders-pre.herokuapp.com/api/v1/items';
     return this.http
