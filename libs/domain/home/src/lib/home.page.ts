@@ -1,7 +1,7 @@
 import { Item } from '@ab/data';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { filter, mergeMap, tap } from 'rxjs/operators';
+import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { CategoriesStore } from './data/categories.store';
 import { HomeService } from './data/home.service';
 import { CategoryHome } from './models/categoryHome';
@@ -27,9 +27,10 @@ export class HomePage {
     from(categories)
       .pipe(
         filter((c) => c.itemsCount === undefined),
-        mergeMap(
-          (category) => this.service.getCountItemsByCategoryId$(category.id),
-          (category, itemsCount) => ({ ...category, itemsCount })
+        mergeMap((category) =>
+          this.service
+            .getCountItemsByCategoryId$(category.id)
+            .pipe(map((itemsCount) => ({ ...category, itemsCount })))
         )
       )
       .subscribe({
