@@ -18,6 +18,6 @@ export class LoadingComponent {
   audit$: Observable<Audit>;
 
   constructor(private store: AuditStore) {
-    this.audit$ = this.store.state$;
+    this.audit$ = this.store.getState$();
   }
 }

@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, filter, map, tap } from 'rxjs/operators';
+import { catchError, filter, tap } from 'rxjs/operators';
 import { AuditStore } from './audit.store';
 
 @Injectable()
@@ -23,8 +23,8 @@ export class AuditInterceptor implements HttpInterceptor {
     }
     this.startLoading();
     return next.handle(request).pipe(
+      filter(() => request.method === 'GET'),
       filter((event) => event instanceof HttpResponse),
-      map((event) => event as HttpResponse<any>),
       tap({
         next: () => this.completeLoad(),
       }),
