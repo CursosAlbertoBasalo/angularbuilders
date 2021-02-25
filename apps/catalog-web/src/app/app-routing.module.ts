@@ -14,6 +14,7 @@ const routes: Routes = [
     path: '',
     data: {
       pageTitle: 'catalog',
+      pageDescription: 'Esto es el catálogo',
     },
     loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
   },
@@ -55,8 +56,8 @@ export class AppRoutingModule {
       )
       .subscribe({
         next: (routeData) => {
-          this.headService.setTitle(routeData?.pageTitle || '');
-          this.headService.setDescription(routeData?.pageDescription || '');
+          // this.headService.setTitle(routeData?.pageTitle || '');
+          // this.headService.setDescription(routeData?.pageDescription || '');
         },
       });
   }
