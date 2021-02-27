@@ -146,9 +146,9 @@ ng g s auth --project shared-data
 # 🗄 Domain 📚 Auth Lib
 ng g library --name=auth --directory=domain --buildable --enableIvy --importPath=@ab/auth --lazy --prefix=ab-auth --routing --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
 
-# 📄 AddItem Page
+# 📄 Login Page
 ng g c login --project=domain-auth --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 
-# 👷‍♂️ AddItem data Service
-ng g s data/addItem --project=domain-add-item
+# 👷‍♂️ Login data Service
+ng g s data/login --project=domain-auth
 ```
