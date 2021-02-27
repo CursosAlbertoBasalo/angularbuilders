@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './data/login.service';
+import { Registration } from './models/registration';
 
 @Component({
   templateUrl: './login.page.html',
@@ -8,11 +9,11 @@ import { LoginService } from './data/login.service';
 })
 export class LoginPage {
   constructor(private router: Router, private service: LoginService) {}
-  onSend(credentials: unknown) {
-    this.service.postCredentials$(credentials).subscribe({
-      next: (userAtk) =>
+  onSend(registration: Registration) {
+    this.service.postCredentials$(registration).subscribe({
+      next: (user) =>
         this.router.navigate(['./auth/activate'], {
-          queryParams: userAtk,
+          queryParams: user,
           queryParamsHandling: 'merge',
         }),
     });

@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ActivatePage } from './activate.page';
 import { LoginPage } from './login.page';
 import { LoginFormComponent } from './ui/login-form/login-form.component';
+import { ActivateFormComponent } from './ui/activate-form/activate-form.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { LoginFormComponent } from './ui/login-form/login-form.component';
       { path: 'activate', pathMatch: 'full', component: ActivatePage },
     ]),
   ],
-  declarations: [LoginPage, LoginFormComponent, ActivatePage],
+  declarations: [LoginPage, LoginFormComponent, ActivatePage, ActivateFormComponent],
 })
 export class AuthModule {}

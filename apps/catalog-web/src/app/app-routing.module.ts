@@ -1,4 +1,4 @@
-import { CanLoadGuard, DataModule, HeadService } from '@ab/data';
+import { AuthStore, CanLoadGuard, DataModule, HeadService } from '@ab/data';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
@@ -56,7 +56,8 @@ export class AppRoutingModule {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private headService: HeadService
+    private headService: HeadService,
+    private authStore: AuthStore
   ) {
     this.router.events
       .pipe(
@@ -70,5 +71,14 @@ export class AppRoutingModule {
           // this.headService.setDescription(routeData?.pageDescription || '');
         },
       });
+    this.authStore.isLoggedIn$().subscribe({
+      next: (isLoggedIn) => {
+        if (isLoggedIn) {
+          this.router.navigateByUrl('/');
+        } else {
+          this.router.navigateByUrl('/auth/login');
+        }
+      },
+    });
   }
 }

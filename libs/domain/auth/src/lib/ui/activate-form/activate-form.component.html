@@ -1,0 +1,9 @@
+<form [formGroup]="form" (submit)="onSend()">
+  <legend>
+  </legend>
+  <div>
+    <label for="uat">Your Activation Token</label>
+    <input name="uat" type="string" formControlName="uat" />
+  </div>
+  <button type="submit" [disabled]="form.invalid">Activate me</button>
+</form>

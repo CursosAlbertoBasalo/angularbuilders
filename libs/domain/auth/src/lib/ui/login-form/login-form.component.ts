@@ -10,6 +10,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Registration } from '../../models/registration';
 
 @Component({
   selector: 'ab-auth-login-form',
@@ -18,7 +19,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
-  @Output() send = new EventEmitter<unknown>();
+  @Output() send = new EventEmitter<Registration>();
   form!: FormGroup;
   constructor(private fb: FormBuilder) {
     this.form = fb.group({

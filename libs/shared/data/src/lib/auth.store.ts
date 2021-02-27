@@ -8,15 +8,22 @@ import { Store } from './store';
 })
 export class AuthStore extends Store<Auth> {
   constructor() {
-    super({ loggedIn: false, token: '', user: 'Unknown' });
+    super({ isLoggedIn: false, sessionToken: '', user: 'Unknown' });
   }
   isLoggedIn() {
-    return this.getState().loggedIn;
+    return this.getState().isLoggedIn;
   }
   isLoggedIn$() {
     return this.getState$().pipe(
-      map((state) => state.loggedIn),
+      map((state) => state.isLoggedIn),
       distinctUntilChanged()
     );
+  }
+  setSessionToken(email: string, sessionToken: string) {
+    this.setState({
+      isLoggedIn: true,
+      sessionToken: sessionToken,
+      user: email,
+    });
   }
 }

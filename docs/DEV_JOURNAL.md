@@ -160,4 +160,6 @@ ng g c ui/login-form --project domain-auth --change-detection OnPush
 # 📄 Activate Page
 ng g c activate --project=domain-auth --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 ng g s data/activate --project=domain-auth
+# 🦠 Presentacional activation form
+ng g c ui/activate-form --project domain-auth --change-detection OnPush
 ```

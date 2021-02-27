@@ -1,5 +1,5 @@
 export interface Auth {
-  loggedIn: boolean;
-  token?: string;
+  isLoggedIn: boolean;
+  sessionToken?: string;
   user?: string;
 }
