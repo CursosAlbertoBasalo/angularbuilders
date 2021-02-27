@@ -1,4 +1,4 @@
-import { HeadService } from '@ab/data';
+import { CanLoadGuard, DataModule, HeadService } from '@ab/data';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
@@ -35,11 +35,21 @@ const routes: Routes = [
     loadChildren: () =>
       import('@ab/search').then((module) => module.SearchModule),
   },
+  {
+    path: 'add-item',
+    canLoad: [CanLoadGuard],
+    loadChildren: () =>
+      import('@ab/addItem').then((module) => module.AddItemModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('@ab/auth').then((module) => module.AuthModule),
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, DataModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

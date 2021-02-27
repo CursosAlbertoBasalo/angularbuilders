@@ -284,7 +284,7 @@ figure figcaption {
 /* ==================== */
 /* FORM */
 /* ==================== */
-form {
+/* form {
   border: 1px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
@@ -351,12 +351,12 @@ textarea[readonly] {
 label {
   font-weight: bold;
   margin-bottom: 0.2rem;
-}
+} */
 
 /* ==================== */
 /* TABLE */
 /* ==================== */
-table {
+/* table {
   border: 1px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
   border-spacing: 0;
@@ -398,7 +398,7 @@ table tr td:first-child {
 
 table tr:nth-child(even) {
   background-color: var(--color-accent);
-}
+} */
 
 /* ==================== */
 /* QUOTES */
