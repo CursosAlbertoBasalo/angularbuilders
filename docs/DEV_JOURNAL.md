@@ -151,4 +151,13 @@ ng g c login --project=domain-auth --flat --inlineStyle --skipSelector --type=Pa
 
 # 👷‍♂️ Login data Service
 ng g s data/login --project=domain-auth
+
+# 🦠 Presentacional login form
+ng g c ui/login-form --project domain-auth --change-detection OnPush
+
+
+
+# 📄 Activate Page
+ng g c activate --project=domain-auth --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+ng g s data/activate --project=domain-auth
 ```
