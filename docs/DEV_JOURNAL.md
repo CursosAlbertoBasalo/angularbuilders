@@ -117,3 +117,38 @@ ng g interceptor audit --project shared-data
 
 // ToDo: Category items counter....
 ```
+
+# 4 - Reactive forms
+
+```bash
+# 🗄 Domain 📚 AddItem Lib
+ng g library --name=addItem --directory=domain --buildable --enableIvy --importPath=@ab/addItem --lazy --prefix=ab-addItem --routing --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
+
+# 📄 AddItem Page
+ng g c addItem --project=domain-add-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+
+# 👷‍♂️ AddItem data Service
+ng g s data/addItem --project=domain-add-item
+
+
+
+
+# 👮‍♀️ Auth Guard
+ng g guard canLoad --project shared-data --implements CanLoad
+
+# 🕵️‍♂️ Auth Interceptor
+ng g interceptor auth --project shared-data
+
+# 🏬 Store (rename to AuthStore)
+ng g s auth --project shared-data
+
+
+# 🗄 Domain 📚 Auth Lib
+ng g library --name=auth --directory=domain --buildable --enableIvy --importPath=@ab/auth --lazy --prefix=ab-auth --routing --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
+
+# 📄 AddItem Page
+ng g c login --project=domain-auth --flat --inlineStyle --skipSelector --type=Page --skipTests=false
+
+# 👷‍♂️ AddItem data Service
+ng g s data/addItem --project=domain-add-item
+```

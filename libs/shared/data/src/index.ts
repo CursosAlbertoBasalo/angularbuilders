@@ -1,4 +1,5 @@
 export * from './lib/audit.store';
+export * from './lib/can-load.guard';
 export * from './lib/data.module';
 export * from './lib/head.service';
 export * from './lib/models/audit';
