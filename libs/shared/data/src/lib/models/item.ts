@@ -5,4 +5,15 @@ export interface Item {
   id: string;
   categoryId: string;
   ownerId?: string;
+
+  price?: number;
+  event?: {
+    date: Date;
+    location: string;
+  };
+  course?: {
+    date: Date;
+    teacher: string;
+    academy: string;
+  };
 }
