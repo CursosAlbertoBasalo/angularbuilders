@@ -127,6 +127,9 @@ ng g library --name=addItem --directory=domain --buildable --enableIvy --importP
 # 📄 AddItem Page
 ng g c addItem --project=domain-add-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 
+# 🦠 AddItem form
+ng g c ui/addItem-form --project domain-add-item --change-detection OnPush
+
 # 👷‍♂️ AddItem data Service
 ng g s data/addItem --project=domain-add-item
 

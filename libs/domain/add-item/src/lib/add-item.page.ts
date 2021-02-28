@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Item } from '@ab/data';
+import { Component } from '@angular/core';
+import { AddItemService } from './data/add-item.service';
 @Component({
   templateUrl: './add-item.page.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class AddItemPage implements OnInit {
+export class AddItemPage {
+  categories$ = this.service.getCatergories$();
+  constructor(private service: AddItemService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onSave(item: Item) {
+    this.service.postItem$(item).subscribe();
   }
-
 }

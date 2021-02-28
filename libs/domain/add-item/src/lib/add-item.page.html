@@ -1,1 +1,3 @@
-<p>add-item works!</p>
+<ab-add-item-form *ngIf="categories$ | async as categories" [props]="{categories:categories}"
+                  (save)="onSave($event)">
+</ab-add-item-form>
