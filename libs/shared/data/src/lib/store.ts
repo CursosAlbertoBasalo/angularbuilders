@@ -1,25 +1,31 @@
 import { BehaviorSubject } from 'rxjs';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
 
 export class Store<StateType> {
-  private readonly stateSubject$: BehaviorSubject<StateType>;
+  private readonly state$: BehaviorSubject<StateType>;
 
   constructor(
-    initialState: StateType,
-    private readonly needsDeepClone = false
+    private readonly initialState: StateType,
+    private readonly needsDeepClone = false,
+    private readonly localStorageKey = ''
   ) {
-    this.stateSubject$ = new BehaviorSubject<StateType>(initialState);
+    this.state$ = new BehaviorSubject<StateType>(this.load());
+    this.state$.pipe(
+      distinctUntilChanged(),
+      tap(() => this.save())
+    );
   }
 
   setState(state: StateType) {
     const newState = this.getClone(state);
-    this.stateSubject$.next(newState);
+    this.state$.next(newState);
   }
   getState() {
-    const currentValue = this.stateSubject$.value;
+    const currentValue = this.state$.value;
     return this.getClone(currentValue);
   }
   getState$() {
-    return this.stateSubject$.asObservable();
+    return this.state$.asObservable();
   }
 
   private getClone(source: StateType): StateType {
@@ -30,5 +36,15 @@ export class Store<StateType> {
     // ToDo: optimize deep clone
     const sourceJson = JSON.stringify(source);
     return JSON.parse(sourceJson);
+  }
+  load() {
+    if (this.localStorageKey === '') return this.initialState;
+    const state = localStorage.getItem(this.localStorageKey);
+    return state ? JSON.parse(state) : this.initialState;
+  }
+  save() {
+    if (this.localStorageKey === '') return;
+    const state = JSON.stringify(this.state$.value);
+    localStorage.setItem(this.localStorageKey, state);
   }
 }

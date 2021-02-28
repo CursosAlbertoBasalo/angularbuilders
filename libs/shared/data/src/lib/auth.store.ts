@@ -8,7 +8,11 @@ import { Store } from './store';
 })
 export class AuthStore extends Store<Auth> {
   constructor() {
-    super({ isLoggedIn: false, sessionToken: '', user: 'Unknown' });
+    super(
+      { isLoggedIn: false, sessionToken: '', user: 'Unknown' },
+      true,
+      'auth'
+    );
   }
   isLoggedIn() {
     return this.getState().isLoggedIn;
@@ -24,6 +28,16 @@ export class AuthStore extends Store<Auth> {
       isLoggedIn: true,
       sessionToken: sessionToken,
       user: email,
+    });
+  }
+  getSessionToken() {
+    return this.getState().sessionToken || '';
+  }
+  clearSessionToken() {
+    this.setState({
+      isLoggedIn: false,
+      sessionToken: '',
+      user: '',
     });
   }
 }
