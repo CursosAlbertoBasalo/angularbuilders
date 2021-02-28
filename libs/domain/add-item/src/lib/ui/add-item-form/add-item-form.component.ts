@@ -46,5 +46,6 @@ export class AddItemFormComponent implements OnInit {
   onSave() {
     const item = this.form.value as Item;
     this.save.next(item);
+    this.form.reset();
   }
 }
