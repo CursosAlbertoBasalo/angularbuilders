@@ -1,5 +1,5 @@
 import { BehaviorSubject } from 'rxjs';
-import { distinctUntilChanged, tap } from 'rxjs/operators';
+import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 
 export class Store<StateType> {
   private readonly state$: BehaviorSubject<StateType>;
@@ -46,5 +46,12 @@ export class Store<StateType> {
     if (this.localStorageKey === '') return;
     const state = JSON.stringify(this.state$.value);
     localStorage.setItem(this.localStorageKey, state);
+  }
+
+  select$(projection: (arg0: StateType) => any) {
+    return this.getState$().pipe(
+      map((state) => projection(state)),
+      distinctUntilChanged()
+    );
   }
 }

@@ -1,27 +1,65 @@
 import { Store } from '@ab/data';
 import { Injectable } from '@angular/core';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+import { CategoriesHome } from '../models/categoriesHome';
 import { CategoryHome } from '../models/categoryHome';
+import { viewModes } from '../models/viewModes';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CategoriesStore extends Store<CategoryHome[]> {
+export class CategoriesStore extends Store<CategoriesHome> {
   constructor() {
-    super([], true);
+    super(
+      {
+        categories: [],
+        loaded: false,
+        fullFilled: false,
+        viewMode: viewModes.sortAddedDate,
+      },
+      true
+    );
   }
 
   setCategories(categories: CategoryHome[]) {
-    this.setState(categories);
+    const state = this.getState();
+    state.categories = categories;
+    state.loaded = true;
+    state.fullFilled = false;
+    this.setState(state);
   }
 
   setCategory(category: CategoryHome) {
     const currentState = this.getState();
-    const affectedIndex = currentState.findIndex((c) => c.id === category.id);
+    const affectedIndex = currentState.categories.findIndex(
+      (c) => c.id === category.id
+    );
     if (affectedIndex >= 0) {
-      currentState[affectedIndex] = category;
+      currentState.categories[affectedIndex] = category;
     } else {
-      currentState.push(category);
+      currentState.categories.push(category);
     }
+    currentState.fullFilled = currentState.categories.every(
+      (category) => !!category.itemsCount
+    );
     this.setState(currentState);
+  }
+
+  idLoaded$() {
+    return this.getState$().pipe(
+      map((state) => state.loaded),
+      distinctUntilChanged()
+    );
+  }
+
+  isFullFilled$() {
+    return this.getState$().pipe(
+      map((state) => state.fullFilled),
+      distinctUntilChanged()
+    );
+  }
+
+  categoriesCounter$() {
+    return this.select$((state) => state.categories.length);
   }
 }
