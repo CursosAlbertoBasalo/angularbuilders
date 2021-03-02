@@ -1,4 +1,4 @@
-<ng-container *ngIf="controlContainer.control" [formGroup]="subForm">
+<form [formGroup]="form">
   <div>
     <label for="date">Date: </label>
     <input
@@ -15,4 +15,12 @@
            placeholder="Who is teaching?"
            formControlName="teacher" />
   </div>
-</ng-container>
+  <div>
+    <label for="academy">Academy: </label>
+    <input
+           name="academy"
+           type="text"
+           placeholder="learning center"
+           formControlName="academy" />
+  </div>
+</form>

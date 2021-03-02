@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ControlContainer, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ab-add-item-event-sub-form',
@@ -8,6 +8,14 @@ import { ControlContainer, FormGroup } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventSubFormComponent {
-  subForm = this.controlContainer.control as FormGroup;
-  constructor(public controlContainer: ControlContainer) {}
+  form!: FormGroup;
+  constructor(private fb: FormBuilder) {}
+
+  buildGroup() {
+    this.form = this.fb.group({
+      date: new FormControl(''),
+      location: new FormControl(''),
+    });
+    return this.form;
+  }
 }

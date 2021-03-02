@@ -1,4 +1,4 @@
-<form *ngIf="form" [formGroup]="form" (submit)="onSave()" #f>
+<form [formGroup]="form" (submit)="onSave()" #f>
   <fieldset>
     <div>
       <label for="name">Name: </label>
@@ -47,16 +47,9 @@
           form.controls['description'].invalid
         "><em>* required</em></span>
     </div>
-    <ab-add-item-event-sub-form formGroupName="event"></ab-add-item-event-sub-form>
-    <!-- <div [ngSwitch]="categoryID.value">
-      <div *ngSwitchCase="'events'">
-        <ab-add-item-event-sub-form formGroupName="event"></ab-add-item-event-sub-form>
-      </div>
-      <div *ngSwitchCase="'courses'">
-        <ab-add-item-course-sub-form formGroupName="course"></ab-add-item-course-sub-form>
-      </div>
-      <div *ngSwitchDefault></div>
-    </div> -->
+    <ab-add-item-event-sub-form [hidden]="categoryID.value!=='events'"></ab-add-item-event-sub-form>
+    <ab-add-item-course-sub-form [hidden]="categoryID.value!=='courses'">
+    </ab-add-item-course-sub-form>
     <div>
       <label for="price">Price: </label>
       <input
