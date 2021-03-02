@@ -7,6 +7,7 @@ import { InputControlComponent } from './components/input-control/input-control.
 import { SelectControlComponent } from './components/select-contol/select-contol.component';
 import { TitleComponent } from './components/title/title.component';
 import { LoadingComponent } from './templates/loading/loading.component';
+import { TrackDirective } from './directives/track.directive';
 
 @NgModule({
   imports: [CommonModule, RouterModule, DataModule],
@@ -16,6 +17,7 @@ import { LoadingComponent } from './templates/loading/loading.component';
     LoadingComponent,
     InputControlComponent,
     SelectControlComponent,
+    TrackDirective,
   ],
   exports: [
     TitleComponent,
@@ -23,6 +25,7 @@ import { LoadingComponent } from './templates/loading/loading.component';
     LoadingComponent,
     InputControlComponent,
     SelectControlComponent,
+    TrackDirective,
   ],
 })
 export class UiModule {}
