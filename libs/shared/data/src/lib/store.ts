@@ -10,10 +10,7 @@ export class Store<StateType> {
     private readonly localStorageKey = ''
   ) {
     this.state$ = new BehaviorSubject<StateType>(this.load());
-    this.state$.pipe(
-      distinctUntilChanged(),
-      tap(() => this.save())
-    );
+    this.state$.pipe(tap(() => this.save())).subscribe();
   }
 
   setState(state: StateType) {
@@ -43,6 +40,7 @@ export class Store<StateType> {
     return state ? JSON.parse(state) : this.initialState;
   }
   save() {
+    console.log('SAVE');
     if (this.localStorageKey === '') return;
     const state = JSON.stringify(this.state$.value);
     localStorage.setItem(this.localStorageKey, state);

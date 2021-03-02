@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged, map } from 'rxjs/operators';
 import { Auth } from './models/auth';
 import { Store } from './store';
 
@@ -18,11 +17,9 @@ export class AuthStore extends Store<Auth> {
     return this.getState().isLoggedIn;
   }
   isLoggedIn$() {
-    return this.getState$().pipe(
-      map((state) => state.isLoggedIn),
-      distinctUntilChanged()
-    );
+    return this.select$((state) => state.isLoggedIn);
   }
+
   setSessionToken(email: string, sessionToken: string) {
     this.setState({
       isLoggedIn: true,

@@ -20,11 +20,13 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     const sessionToken = this.store.getSessionToken();
     const authorization = 'Bearer ' + sessionToken;
+
     request = request.clone({
       setHeaders: {
         Authorization: authorization,
       },
     });
+
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if ([401, 403].includes(err.status)) {
