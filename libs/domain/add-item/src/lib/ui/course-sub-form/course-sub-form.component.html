@@ -1,0 +1,26 @@
+<form [formGroup]="form">
+  <div>
+    <label for="date">Date: </label>
+    <input
+           name="date"
+           type="date"
+           placeholder="When does it start?"
+           formControlName="date" />
+  </div>
+  <div>
+    <label for="teacher">Teacher: </label>
+    <input
+           name="teacher"
+           type="text"
+           placeholder="Who is teaching?"
+           formControlName="teacher" />
+  </div>
+  <div>
+    <label for="academy">Academy: </label>
+    <input
+           name="academy"
+           type="text"
+           placeholder="learning center"
+           formControlName="academy" />
+  </div>
+</form>

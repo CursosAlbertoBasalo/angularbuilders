@@ -6,6 +6,7 @@ import {
   Input,
   OnInit,
   Output,
+  ViewChild,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -13,6 +14,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { CourseSubFormComponent } from '../course-sub-form/course-sub-form.component';
+import { EventSubFormComponent } from '../event-sub-form/event-sub-form.component';
 
 @Component({
   selector: 'ab-add-item-form',
@@ -23,23 +26,25 @@ import {
 export class AddItemFormComponent implements OnInit {
   @Input() props: { categories: Category[] } = { categories: [] };
   @Output() save = new EventEmitter<Item>();
+  @ViewChild(EventSubFormComponent, { static: true })
+  eventSubForm!: EventSubFormComponent;
+  @ViewChild(CourseSubFormComponent, { static: true })
+  courseSubForm!: CourseSubFormComponent;
+
   form!: FormGroup;
+
   constructor(private fb: FormBuilder) {}
+
   ngOnInit(): void {
+    console.log(this.eventSubForm);
     this.form = this.fb.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       categoryId: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.minLength(3)]),
       url: new FormControl(''),
       price: new FormControl(0),
-      event: new FormGroup({
-        date: new FormControl(''),
-        location: new FormControl(''),
-      }),
-      course: new FormGroup({
-        date: new FormControl(''),
-        teacher: new FormControl(''),
-      }),
+      event: this.eventSubForm.buildGroup(),
+      course: this.courseSubForm.buildGroup(),
     });
   }
 
