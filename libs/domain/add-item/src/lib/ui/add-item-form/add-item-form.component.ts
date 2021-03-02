@@ -8,6 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -47,5 +48,18 @@ export class AddItemFormComponent implements OnInit {
     const item = this.form.value as Item;
     this.save.next(item);
     this.form.reset();
+  }
+}
+
+class ItemValidators {
+  static future(control: AbstractControl): any | null {
+    console.log('future');
+    const value = control.value as Date;
+    if (!value) return null;
+    const now = new Date();
+    if (now.getTime() > value.getTime()) {
+      return { future: 'No past dates allowed' };
+    }
+    return null;
   }
 }

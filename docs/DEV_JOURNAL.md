@@ -166,3 +166,9 @@ ng g s data/activate --project=domain-auth
 # 🦠 Presentacional activation form
 ng g c ui/activate-form --project domain-auth --change-detection OnPush
 ```
+
+```
+ng g c ui/event-sub-form --project domain-add-item --change-detection OnPush
+ng g c ui/course-sub-form --project domain-add-item --change-detection OnPush
+ng g s validators --project shared-data
+```

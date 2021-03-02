@@ -47,6 +47,16 @@
           form.controls['description'].invalid
         "><em>* required</em></span>
     </div>
+    <ab-add-item-event-sub-form formGroupName="event"></ab-add-item-event-sub-form>
+    <!-- <div [ngSwitch]="categoryID.value">
+      <div *ngSwitchCase="'events'">
+        <ab-add-item-event-sub-form formGroupName="event"></ab-add-item-event-sub-form>
+      </div>
+      <div *ngSwitchCase="'courses'">
+        <ab-add-item-course-sub-form formGroupName="course"></ab-add-item-course-sub-form>
+      </div>
+      <div *ngSwitchDefault></div>
+    </div> -->
     <div>
       <label for="price">Price: </label>
       <input
@@ -54,13 +64,6 @@
              type="number"
              placeholder="Price for assitent"
              formControlName="price" />
-    </div>
-    <div [ngSwitch]="categoryID.value">
-      <div *ngSwitchCase="'events'">
-      </div>
-      <div *ngSwitchCase="'courses'">
-      </div>
-      <div *ngSwitchDefault></div>
     </div>
   </fieldset>
   <input type="submit" value="💾 Save" [disabled]="form.invalid" />
