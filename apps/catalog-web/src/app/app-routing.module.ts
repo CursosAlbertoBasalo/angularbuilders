@@ -67,6 +67,8 @@ export class AppRoutingModule {
       )
       .subscribe({
         next: (routeData) => {
+          throw new Error('forzado');
+
           // this.headService.setTitle(routeData?.pageTitle || '');
           // this.headService.setDescription(routeData?.pageDescription || '');
         },

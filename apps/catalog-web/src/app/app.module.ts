@@ -1,10 +1,11 @@
 import { DataModule } from '@ab/data';
 import { TermModule } from '@ab/term';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ErrorHandlerService } from './error-handler.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     DataModule,
   ],
-  providers: [],
+  providers: [{ provide: ErrorHandler, useClass: ErrorHandlerService }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
