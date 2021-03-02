@@ -36,7 +36,6 @@ export class AddItemFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    console.log(this.eventSubForm);
     this.form = this.fb.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       categoryId: new FormControl('', [Validators.required]),
