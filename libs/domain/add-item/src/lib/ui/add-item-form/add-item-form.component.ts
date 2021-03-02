@@ -14,6 +14,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ItemValidators } from '../../data/item-validators';
 import { CourseSubFormComponent } from '../course-sub-form/course-sub-form.component';
 import { EventSubFormComponent } from '../event-sub-form/event-sub-form.component';
 
@@ -40,7 +41,7 @@ export class AddItemFormComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       categoryId: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.minLength(3)]),
-      url: new FormControl(''),
+      url: new FormControl('', ItemValidators.url),
       price: new FormControl(0),
       event: this.eventSubForm.buildGroup(),
       course: this.courseSubForm.buildGroup(),

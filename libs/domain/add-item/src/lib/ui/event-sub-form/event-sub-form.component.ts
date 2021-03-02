@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ItemValidators } from '../../data/item-validators';
 
 @Component({
   selector: 'ab-add-item-event-sub-form',
@@ -13,7 +14,7 @@ export class EventSubFormComponent {
 
   buildGroup() {
     this.form = this.fb.group({
-      date: new FormControl(''),
+      date: new FormControl('', ItemValidators.future),
       location: new FormControl(''),
     });
     return this.form;
