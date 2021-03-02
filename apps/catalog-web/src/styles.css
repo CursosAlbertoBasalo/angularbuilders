@@ -284,12 +284,19 @@ figure figcaption {
 /* ==================== */
 /* FORM */
 /* ==================== */
-/* form {
+
+form header {
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+}
+
+form {
   border: 1px solid var(--color-bg-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
   display: block;
   max-width: var(--width-card-wide);
+  width: var(--width-card-wide);
   min-width: var(--width-card);
   padding: 1.5rem;
   text-align: var(--justify-normal);
@@ -318,7 +325,7 @@ select,
 textarea {
   display: block;
   font-size: inherit;
-  max-width: var(--width-card-wide);
+  max-width: var(--width-content);
 }
 
 input[type='checkbox'],
@@ -351,7 +358,7 @@ textarea[readonly] {
 label {
   font-weight: bold;
   margin-bottom: 0.2rem;
-} */
+}
 
 /* ==================== */
 /* TABLE */

@@ -1,0 +1,7 @@
+/* select,
+label {
+  display: block;
+  font-size: inherit;
+  max-width: var(--width-content);
+  width: max-content;
+} */
