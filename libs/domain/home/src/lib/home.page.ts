@@ -25,7 +25,6 @@ export class HomePage {
     this.featured$ = service.getFeatured$();
   }
   fillCounter(categories: CategoryHome[]) {
-    console.log('filling');
     from(categories)
       .pipe(
         filter((c) => c.itemsCount === 0),
