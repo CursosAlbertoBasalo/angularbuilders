@@ -6,6 +6,11 @@
            type="date"
            placeholder="When does it start?"
            formControlName="date" />
+    <span
+          *ngIf="
+          form.controls['date'].touched &&
+          form.controls['date'].invalid
+        "><em>* {{form.controls['date'].errors | json}}</em></span>
   </div>
   <div>
     <label for="location">Location: </label>
