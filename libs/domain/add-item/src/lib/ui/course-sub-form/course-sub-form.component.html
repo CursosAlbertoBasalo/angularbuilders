@@ -1,31 +1,18 @@
 <form [formGroup]="form">
-  <div>
-    <label for="date">Date: </label>
-    <input
-           name="date"
-           type="date"
-           placeholder="When does it start?"
-           formControlName="date" />
-    <span
-          *ngIf="
-          form.controls['date'].touched &&
-          form.controls['date'].invalid
-        "><em>* {{form.controls['date'].getError('future')}}</em></span>
-  </div>
-  <div>
-    <label for="teacher">Teacher: </label>
-    <input
-           name="teacher"
-           type="text"
-           placeholder="Who is teaching?"
-           formControlName="teacher" />
-  </div>
-  <div>
-    <label for="academy">Academy: </label>
-    <input
-           name="academy"
-           type="text"
-           placeholder="learning center"
-           formControlName="academy" />
-  </div>
+  <ab-ui-input-control label="Date:"
+                       placeholder="URL of the resource home"
+                       formControlName="date"
+                       type="date"
+                       [form]="form">
+  </ab-ui-input-control>
+  <ab-ui-input-control label="Teacher:"
+                       placeholder="URL of the resource home"
+                       formControlName="teacher"
+                       [form]="form">
+  </ab-ui-input-control>
+  <ab-ui-input-control label="Academy:"
+                       placeholder="Learning center"
+                       formControlName="academy"
+                       [form]="form">
+  </ab-ui-input-control>
 </form>

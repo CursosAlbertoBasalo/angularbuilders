@@ -1,0 +1,11 @@
+<div>
+  <label for="{{ formControlName }}">{{ label }}</label>
+  <select name="{{ formControlName }}" (change)="onInput($event)">
+    <option
+            [value]="option['id']"
+            *ngFor="let option of options">
+      {{ option['name'] }}
+    </option>
+  </select>
+  <small *ngIf="showError()"><i>{{ error() }}</i></small>
+</div>

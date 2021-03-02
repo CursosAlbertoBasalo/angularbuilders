@@ -1,23 +1,13 @@
 <form [formGroup]="form">
-  <div>
-    <label for="date">Date: </label>
-    <input
-           name="date"
-           type="date"
-           placeholder="When does it start?"
-           formControlName="date" />
-    <span
-          *ngIf="
-          form.controls['date'].touched &&
-          form.controls['date'].invalid
-        "><em>* {{form.controls['date'].errors | json}}</em></span>
-  </div>
-  <div>
-    <label for="location">Location: </label>
-    <input
-           name="location"
-           type="text"
-           placeholder="Where will it be?"
-           formControlName="location" />
-  </div>
+  <ab-ui-input-control label="Date:"
+                       placeholder="URL of the resource home"
+                       formControlName="date"
+                       type="date"
+                       [form]="form">
+  </ab-ui-input-control>
+  <ab-ui-input-control label="Location:"
+                       placeholder="Where will it be?"
+                       formControlName="location"
+                       [form]="form">
+  </ab-ui-input-control>
 </form>

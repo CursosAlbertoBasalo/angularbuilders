@@ -171,4 +171,6 @@ ng g c ui/activate-form --project domain-auth --change-detection OnPush
 ng g c ui/event-sub-form --project domain-add-item --change-detection OnPush
 ng g c ui/course-sub-form --project domain-add-item --change-detection OnPush
 ng g s validators --project shared-data
+ng g c components/input-control --project shared-ui --change-detection OnPush --export
+ng g c components/select-contol --project shared-ui --change-detection OnPush --export
 ```

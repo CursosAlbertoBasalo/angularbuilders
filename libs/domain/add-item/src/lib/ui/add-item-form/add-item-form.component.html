@@ -1,68 +1,37 @@
 <form [formGroup]="form" (submit)="onSave()" #f>
   <fieldset>
-    <div>
-      <label for="name">Name: </label>
-      <input
-             name="name"
-             type="text"
-             placeholder="Name of the resource"
-             formControlName="name" />
-      <span
-            *ngIf="form.controls['name'].touched && form.controls['name'].invalid"><em>* required
-          min length of 2</em></span>
-    </div>
-    <div>
-      <label for="description">Description: </label>
-      <input
-             name="description"
-             type="text"
-             placeholder="Description of the resource"
-             formControlName="description" />
-      <span
-            *ngIf="
-          form.controls['description'].touched &&
-          form.controls['description'].invalid
-        "><em>* required min length of 3</em></span>
-    </div>
-    <div>
-      <label for="url">Home Page: </label>
-      <input
-             type="url"
-             placeholder="URL of the resource home"
-             formControlName="url" />
-      <span
-            *ngIf="
-           form.controls['url'].touched &&
-           form.controls['url'].invalid
-         "><em>* Not a valid URL</em></span>
-    </div>
-    <div>
-      <label for="categoryId">Category: </label>
-      <select name="categoryId" formControlName="categoryId" #categoryID>
-        <option
-                [value]="category.id"
-                *ngFor="let category of props.categories"
-                #categoryID>
-          {{ category.name }}
-        </option>
-      </select>
-      <span
-            *ngIf="
-          form.controls['description'].touched &&
-          form.controls['description'].invalid
-        "><em>* required</em></span>
-    </div>
+    <ab-ui-input-control label="Name:"
+                         placeholder="Name of the resource"
+                         formControlName="name"
+                         [form]="form">
+    </ab-ui-input-control>
+    <ab-ui-input-control label="Description:"
+                         placeholder="Description of the resource"
+                         formControlName="description"
+                         [form]="form">
+    </ab-ui-input-control>
+    <ab-ui-input-control label="Home Page:"
+                         placeholder="URL of the resource home"
+                         formControlName="url"
+                         type="url"
+                         [form]="form">
+    </ab-ui-input-control>
+    <ab-ui-select-control #categoryID
+                          label="Category:"
+                          placeholder="URL of the resource home"
+                          formControlName="categoryId"
+                          [options]="props.categories"
+                          [form]="form">
+    </ab-ui-select-control>
     <ab-add-item-event-sub-form [hidden]="categoryID.value!=='events'"></ab-add-item-event-sub-form>
     <ab-add-item-course-sub-form [hidden]="categoryID.value!=='courses'">
     </ab-add-item-course-sub-form>
-    <div>
-      <label for="price">Price in $: </label>
-      <input
-             name="price"
-             type="number"
-             placeholder="Price in $"
-             formControlName="price" />
-    </div>
+    <ab-ui-input-control label="Price in $:"
+                         placeholder="Price in $"
+                         formControlName="price"
+                         type="number"
+                         [form]="form">
+    </ab-ui-input-control>
   </fieldset>
   <input type="submit" value="💾 Save" [disabled]="form.invalid" />
 </form>
