@@ -1,4 +1,3 @@
-import { DataModule } from '@ab/data';
 import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -8,7 +7,6 @@ import { CategoryPage } from './category.page';
 @NgModule({
   imports: [
     CommonModule,
-    DataModule,
     UiModule,
     RouterModule.forChild([
       { path: ':id', pathMatch: 'full', component: CategoryPage },

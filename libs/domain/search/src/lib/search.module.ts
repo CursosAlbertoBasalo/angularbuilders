@@ -1,4 +1,3 @@
-import { DataModule } from '@ab/data';
 import { UiModule } from '@ab/ui';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -10,7 +9,6 @@ import { ItemsComponent } from './ui/items/items.component';
   imports: [
     CommonModule,
     UiModule,
-    DataModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: SearchPage },
     ]),
