@@ -176,3 +176,8 @@ ng g c components/select-contol --project shared-ui --change-detection OnPush --
 
 ng g @schematics/angular:directive directives/track --project shared-ui --export --skip-tests
 ```
+
+```
+ng add @angular/pwa
+https://www.pwabuilder.com/imageGenerator
+```
