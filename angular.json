@@ -55,7 +55,8 @@
             "aot": true,
             "assets": [
               "apps/catalog-web/src/favicon.ico",
-              "apps/catalog-web/src/assets"
+              "apps/catalog-web/src/assets",
+              "apps/catalog-web/src/manifest.webmanifest"
             ],
             "styles": ["apps/catalog-web/src/styles.css"],
             "scripts": []
@@ -86,7 +87,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/catalog-web/ngsw-config.json"
             }
           }
         },
