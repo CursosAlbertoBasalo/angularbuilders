@@ -10,4 +10,7 @@
 <main>
   <router-outlet></router-outlet>
 </main>
-<footer><a href="https://github.com/angularbuilders">By Angular.Builders</a></footer>
+<footer><a href="https://github.com/angularbuilders">By Angular.Builders</a>
+  <button *ngIf="shouldInstall()" (click)="installPWA()">Install as an application</button>
+  <button *ngIf="updateAvailable" (click)="reload()">Update available. Click to refresh</button>
+</footer>

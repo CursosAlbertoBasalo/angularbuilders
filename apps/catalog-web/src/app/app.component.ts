@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'ab-root',
@@ -7,11 +8,23 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   public promptEvent!: { preventDefault: any; prompt: () => void };
+  public updateAvailable!: boolean;
 
   @HostListener('window:beforeinstallprompt', ['$event'])
   onbeforeinstallprompt(event: { preventDefault: any; prompt: () => void }) {
     event.preventDefault();
     this.promptEvent = event;
+  }
+
+  constructor(private swUpdate: SwUpdate) {
+    this.swUpdate.available.subscribe((evt) => {
+      console.warn('available: ' + evt.available);
+      this.updateAvailable = true;
+    });
+  }
+
+  public reload() {
+    this.swUpdate.activateUpdate().then(() => document.location.reload());
   }
 
   public installPWA() {
