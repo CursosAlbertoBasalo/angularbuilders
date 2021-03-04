@@ -1,4 +1,4 @@
-import { getTitle } from '../support/app.po';
+import { getTitle } from '../support/app';
 
 describe('catalog-web', () => {
   beforeEach(() => cy.visit('/'));

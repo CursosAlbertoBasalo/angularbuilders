@@ -8,7 +8,11 @@ declare namespace Cypress {
 
 Cypress.Commands.add('login', (email) => {
   cy.get('input[name="email"]').type(email);
-  cy.get('button').contains('Send me a token').click();
-  cy.url().should('contain', 'activate');
-  cy.get('button').contains('Activate me').click();
+  cy.get('button')
+    .contains('Send me a token')
+    .click()
+    .then(() => {
+      cy.url().should('contain', 'activate');
+      cy.get('button').contains('Activate me').click();
+    });
 });
