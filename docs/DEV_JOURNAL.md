@@ -122,13 +122,13 @@ ng g interceptor audit --project shared-data
 
 ```bash
 # 🗄 Domain 📚 AddItem Lib
-ng g library --name=addItem --directory=domain --buildable --enableIvy --importPath=@ab/addItem --lazy --prefix=ab-addItem --routing --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
+ng g library --name=addItem --directory=domain --buildable --enableIvy --importPath=@ab/addItem --lazy --prefix=ab-add-item --routing      --parentModule=apps\catalog-web\src\app\app-routing.module.ts --simpleModuleName --strict --tags='domain, route'
 
 # 📄 AddItem Page
 ng g c addItem --project=domain-add-item --flat --inlineStyle --skipSelector --type=Page --skipTests=false
 
 # 🦠 AddItem form
-ng g c ui/addItem-form --project domain-add-item --change-detection OnPush
+ng g c ui/form --project domain-add-item --change-detection OnPush
 
 # 👷‍♂️ AddItem data Service
 ng g s data/addItem --project=domain-add-item
